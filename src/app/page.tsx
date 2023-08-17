@@ -1,13 +1,12 @@
 import Image from 'next/image'
-import { Button } from './components'
+import { Button, Icon } from './components'
 
 
 export default function Home() {
   return (
-    <div>
       <Button>
         Próximo
+        <Icon variant='arrowRight' />
       </Button>
-    </div>
-  )
+  );
 }
