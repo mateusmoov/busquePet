@@ -13,9 +13,8 @@ const config: Config = {
         header: ['var(--font-poppins)']
       },
       backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+        'donor-header': 'linear-gradient(132deg, #008080 40.32%, #800080 100%)',
+        'adopter-header': 'linear-gradient(132deg, #800080 40.32%, #008080 100%)'
       },
     },
   },
