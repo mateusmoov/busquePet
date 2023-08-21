@@ -4,7 +4,7 @@ import { twMerge } from "tailwind-merge";
 type VariantsProps = {
   label: string;
   input: string;
-}
+};
 
 type InputProps = InputHTMLAttributes<HTMLInputElement> & {
   label: string;
