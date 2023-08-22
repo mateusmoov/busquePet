@@ -3,3 +3,4 @@ export { Icon } from "./Icon";
 export { Header } from "./Header"
 export { Input } from './Input'
 export { Select } from './Select'
+export { FormGroup } from './FormGroup'
