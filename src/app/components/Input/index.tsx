@@ -34,6 +34,7 @@ export const Input = ({ label, variant, ...rest }: InputProps) => {
         {label}
       </label>
       <input
+      type="radio"
         id={label}
         className={twMerge(
           variants[variant].input,
