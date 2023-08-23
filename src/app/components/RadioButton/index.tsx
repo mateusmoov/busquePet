@@ -1,43 +1,20 @@
 import { InputHTMLAttributes } from "react";
-import { twMerge } from "tailwind-merge";
-
-type VariantsProps = {
-  label: string;
-  input: string;
-};
 
 type RadioButtonProps = InputHTMLAttributes<HTMLInputElement> & {
   label: string;
-  variant: VariantProps;
   value: string;
   onChangeValue?: (event: React.ChangeEvent<HTMLInputElement>) => void;
 };
 
-type VariantProps = keyof typeof variants;
-
-const variants = {
-  donor: {
-    label: "text-fuchsia-800",
-    input: "",
-  },
-  adopter: {
-    label: "text-cyan-700",
-    input: "",
-  },
-} satisfies Record<string, VariantsProps>;
-
-export const RadioButton = ({ label, variant, onChangeValue, value, ...rest }: RadioButtonProps) => {
+export const RadioButton = ({ label, onChangeValue, value, ...rest }: RadioButtonProps) => {
   return (
     <>
-      <label>
+      <label className="text-sm font-body mb-2 flex items-center text-neutral-600 gap-x-2">
         <input
           type="radio"
           onChange={onChangeValue}
           value={value}
-          className={twMerge(
-            variants[variant].input,
-            "w-10 h-10 checked:bg-red-700"
-          )}
+          className="w-5 h-5 accent-pink-500"
           {...rest}
         />
         {label}
