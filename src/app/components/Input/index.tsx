@@ -1,4 +1,4 @@
-import { InputHTMLAttributes } from "react";
+import { InputHTMLAttributes, forwardRef } from "react";
 import { twMerge } from "tailwind-merge";
 
 type VariantsProps = {
@@ -24,7 +24,7 @@ const variants = {
   },
 } satisfies Record<string, VariantsProps>;
 
-export const Input = ({ label, variant, ...rest }: InputProps) => {
+export const Input = forwardRef<HTMLInputElement,InputProps>(({ label, variant, ...rest }, ref) => {
   return (
     <div className="flex flex-col">
       <label
@@ -34,14 +34,17 @@ export const Input = ({ label, variant, ...rest }: InputProps) => {
         {label}
       </label>
       <input
-      type="radio"
+        type="text"
         id={label}
         className={twMerge(
           variants[variant].input,
           "text-black font-body py-3 rounded-xl border-2 "
         )}
         {...rest}
+        ref={ref}
       />
     </div>
   );
-};
+});
+
+Input.displayName = 'input'
