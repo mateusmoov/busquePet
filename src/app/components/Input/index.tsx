@@ -8,7 +8,9 @@ type VariantsProps = {
 
 type InputProps = InputHTMLAttributes<HTMLInputElement> & {
   label: string;
+  type: string;
   variant: VariantProps;
+  className?: string
 };
 
 type VariantProps = keyof typeof variants;
@@ -24,7 +26,7 @@ const variants = {
   },
 } satisfies Record<string, VariantsProps>;
 
-export const Input = forwardRef<HTMLInputElement,InputProps>(({ label, variant, ...rest }, ref) => {
+export const Input = forwardRef<HTMLInputElement,InputProps>(({ label, variant, className, ...rest }, ref) => {
   return (
     <div className="flex flex-col">
       <label
@@ -34,11 +36,10 @@ export const Input = forwardRef<HTMLInputElement,InputProps>(({ label, variant, 
         {label}
       </label>
       <input
-        type="text"
         id={label}
         className={twMerge(
           variants[variant].input,
-          "text-black font-body py-3 rounded-xl border-2 "
+          className, "text-black font-body py-3 rounded-xl border-2"
         )}
         {...rest}
         ref={ref}

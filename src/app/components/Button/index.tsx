@@ -27,7 +27,7 @@ export const Button = ({
   ...rest
 }: ButtonProps) => {
   return (
-    <button className={twMerge(variants[variant], className, 'relative')} {...rest}>
+    <button className={twMerge(variants[variant], className, 'relative text-white')} {...rest}>
       <span>{children}</span>
       {icon && <Icon variant={icon} className="absolute right-2"/>}
     </button>
