@@ -1,12 +1,8 @@
-'use client'
-
-
 import Image from "next/image"
-import { Input, Button, Icon, Section } from "../components";
+import { Input, Button, Section } from "../components";
 
 const Login = () => {
   return (
-    <>
       <main>
         <Section>
           <div className="flex justify-center mb-20 mt-14">
@@ -23,7 +19,7 @@ const Login = () => {
               placeholder="exemplo@exemplo.com"
               label="E-mail"
               variant="donor"
-              className="placeholder:pl-3"
+              className="pl-2"
             />
             <Input
               type="password"
@@ -51,7 +47,6 @@ const Login = () => {
           </div>
         </Section>
       </main>
-    </>
   );
 }
 
