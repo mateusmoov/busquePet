@@ -3,8 +3,9 @@ import { Input, Button, Section } from "../components";
 
 const Login = () => {
   return (
-      <main>
-        <Section>
+    <main className="flex items-center justify-center h-screen">
+      <Section>
+        <form className="flex flex-col gap-3">
           <div className="flex justify-center mb-20 mt-14">
             <Image
               alt="Logo do BusquePet"
@@ -21,16 +22,12 @@ const Login = () => {
               variant="donor"
               className="pl-2"
             />
-            <Input
-              type="password"
-              label="Senha"
-              variant="donor"
-            />
+            <Input type="password" label="Senha" variant="donor" />
           </div>
           <div className="flex flex-col text-center mb-14">
             <span className="font-body">Ainda não possui conta?</span>
             <a
-              href=""
+              href="/"
               className="font-body font-medium text-sky-700 underline underline-offset-2"
             >
               Cadastre-se
@@ -45,8 +42,9 @@ const Login = () => {
               Entrar
             </Button>
           </div>
-        </Section>
-      </main>
+        </form>
+      </Section>
+    </main>
   );
 }
 
