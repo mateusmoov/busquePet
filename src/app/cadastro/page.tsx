@@ -37,7 +37,7 @@ export const SignIn = () => {
           >
             <div className="flex flex-col text-start">
               <span className="mb-2 font-semibold">
-                Cadastrar-me como doador
+                Cadastrar como doador
               </span>
               <span>Quero doar para que bichinho tenha um lar digno.</span>
             </div>
