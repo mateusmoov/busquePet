@@ -6,9 +6,7 @@ type VariantProps = Record<string, string>;
 type VariantKeyProps = keyof typeof variants;
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
-  children: ReactNode;
   variant: VariantKeyProps;
-  className?: string;
   icon?: IconVariantProps;
 };
 
