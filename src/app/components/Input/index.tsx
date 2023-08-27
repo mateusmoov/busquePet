@@ -1,4 +1,4 @@
-import { InputHTMLAttributes, forwardRef } from "react";
+import { ComponentPropsWithRef, forwardRef } from "react";
 import { twMerge } from "tailwind-merge";
 
 type VariantsProps = {
@@ -6,7 +6,7 @@ type VariantsProps = {
   input: string;
 };
 
-type InputProps = InputHTMLAttributes<HTMLInputElement> & {
+type InputProps = ComponentPropsWithRef<'input'> & {
   label: string;
   type: string;
   variant: VariantProps;

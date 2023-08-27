@@ -1,6 +1,6 @@
-import { InputHTMLAttributes } from "react";
+import { ComponentPropsWithRef } from "react";
 
-type RadioButtonProps = InputHTMLAttributes<HTMLInputElement> & {
+type RadioButtonProps = ComponentPropsWithRef<"input"> & {
   label: string;
   value: string;
   onChangeValue?: (event: React.ChangeEvent<HTMLInputElement>) => void;

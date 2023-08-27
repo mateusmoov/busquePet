@@ -1,11 +1,11 @@
-import { ButtonHTMLAttributes, ReactNode } from "react";
+import { ComponentPropsWithRef } from "react";
 import { twMerge } from "tailwind-merge";
 import { Icon } from "@/app/components";
 import { IconVariantProps } from "../Icon";
 type VariantProps = Record<string, string>;
 type VariantKeyProps = keyof typeof variants;
 
-type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
+type ButtonProps = ComponentPropsWithRef<'button'> & {
   variant: VariantKeyProps;
   icon?: IconVariantProps;
 };
