@@ -1,12 +1,10 @@
-import { HTMLProps, ReactNode } from "react";
-
-
+import { HTMLProps } from "react";
+import { twMerge } from "tailwind-merge";
 
 type VariantProps = Record<string, string>;
 type VariantKeyProps = keyof typeof variants;
 
 type HeaderProps = HTMLProps<HTMLDivElement> & {
-  children: ReactNode;
   variant: VariantKeyProps;
 };
 
@@ -15,12 +13,15 @@ const variants = {
   donor: "bg-donor-header",
 } satisfies VariantProps;
 
-export const Header = ({ children, variant, ...rest }: HeaderProps) => {
+export const Header = ({ children, variant, className, ...rest }: HeaderProps) => {
   return (
     <>
-      <div className={variants[variant]} {...rest}>
+      <header
+        className={twMerge(variants[variant], className, "w-full")}
+        {...rest}
+      >
         {children}
-      </div>
+      </header>
     </>
   );
 };

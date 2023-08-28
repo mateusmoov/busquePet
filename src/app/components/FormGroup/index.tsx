@@ -17,7 +17,7 @@ type VariantProps = keyof typeof variants;
 const variants = {
   adopter: {
     label: "text-cyan-700",
-    outlined: "outline-cyan-700",
+    outlined: "outline-cyan-700 px-4 pl-4 ",
   },
 } satisfies Record<string, VariantsProps>;
 
@@ -36,7 +36,7 @@ export const FormGroup = ({ label, variant, children }: FormGroupProps) => {
       <div
         className={twMerge(
           variants[variant].outlined,
-          "rounded-lg outline outline-1 block"
+          "rounded-lg outline outline-1 block px-4 pl-4"
         )}
       >
         {children}
