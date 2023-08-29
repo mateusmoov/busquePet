@@ -11,18 +11,20 @@ const PersonType = () => {
           <span className="font-header text-white text-sm">Vamos lá!</span>
         </div>
       </Header>
-      <main className="relative">
+      <main>
         <Section>
-          <span className="mb-11 mt-6 font-header text-cyan-700 font-semibold text-lg flex justify-center">
-            Vamos começar!
-          </span>
-          <FormGroup label="Você é:" variant="adopter" className="py-4">
-            <div className="flex flex-col gap-y-4">
-              <RadioButton label="Pessoa física" value="fisica" />
-              <RadioButton label="Pessoa Jurídica (ONG)" value="fisica" />
-            </div>
-          </FormGroup>
-          <div className="flex flex-col justify-end items-end">
+          <div className="flex min-h-[calc(100vh_-_10rem)] flex-col">
+            <span className="mb-11 mt-6 font-header text-cyan-700 font-semibold text-lg flex justify-center">
+              Vamos começar!
+            </span>
+            <FormGroup label="Você é:" variant="adopter" className="py-4">
+              <div className="flex flex-col gap-y-4">
+                <RadioButton label="Pessoa física" value="fisica" />
+                <RadioButton label="Pessoa Jurídica (ONG)" value="fisica" />
+              </div>
+            </FormGroup>
+          </div>
+          <div className="flex justify-end mb-9">
             <Button
               variant="filled"
               icon="arrowRight"
