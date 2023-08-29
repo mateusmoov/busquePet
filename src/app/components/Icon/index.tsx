@@ -14,8 +14,12 @@ type IconProps = {
 
 const variants = {
   arrowRight: {
-    image: "/icons/arrow_back.svg",
+    image: "/icons/arrow_right.svg",
     alt: "avançar",
+  },
+  arrowLeft: {
+    image: "/icons/arrow_left.svg",
+    alt: "voltar",
   },
   checkmark: {
     image: "/icons/checkmark.svg",

@@ -10,6 +10,7 @@ type FormGroupProps = {
   label: string;
   variant: VariantProps;
   children: ReactNode;
+  className: string
 };
 
 type VariantProps = keyof typeof variants;
@@ -21,7 +22,7 @@ const variants = {
   },
 } satisfies Record<string, VariantsProps>;
 
-export const FormGroup = ({ label, variant, children }: FormGroupProps) => {
+export const FormGroup = ({ label, variant, children, className }: FormGroupProps) => {
   return (
     <>
       <label
@@ -36,7 +37,7 @@ export const FormGroup = ({ label, variant, children }: FormGroupProps) => {
       <div
         className={twMerge(
           variants[variant].outlined,
-          "rounded-lg outline outline-1 block px-4 pl-4"
+          className, "rounded-lg outline outline-1 block px-4 pl-4"
         )}
       >
         {children}
