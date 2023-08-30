@@ -1,3 +1,4 @@
+import { ComponentPropsWithoutRef } from "react";
 import { twMerge } from "tailwind-merge";
 
 type SelectItemProps = {
@@ -5,7 +6,7 @@ type SelectItemProps = {
   name: string;
 };
 
-type SelectProps = {
+type SelectProps = ComponentPropsWithoutRef<'select'> & {
   label: string;
   variant: VariantProps;
   selectItems: SelectItemProps[];
@@ -32,14 +33,17 @@ const variants = {
 
 export const Select = ({
   label,
-  variant,
+variant,
   selectItems,
   onChangeValue,
 }: SelectProps) => {
   return (
-    <>
+    <div className="flex flex-col">
       <label
-        className={twMerge(variants[variant].label, "block")}
+        className={twMerge(
+          variants[variant].label,
+          "flex flex-col text-xs mb-2"
+        )}
         htmlFor={label}
       >
         {label}
@@ -50,7 +54,7 @@ export const Select = ({
         onChange={onChangeValue}
         className={twMerge(
           variants[variant].select,
-          "text-black font-body py-3 rounded-xl border-2 block"
+          "text-black font-body py-3 rounded-xl border block pl-2 pr-2 bg-white"
         )}
       >
         {selectItems.map((item, index: number) => (
@@ -59,6 +63,6 @@ export const Select = ({
           </option>
         ))}
       </select>
-    </>
+    </div>
   );
 };
