@@ -31,7 +31,7 @@ export const Input = forwardRef<HTMLInputElement,InputProps>(({ label, variant, 
     <div className="flex flex-col">
       <label
         htmlFor={label}
-        className={twMerge(variants[variant].label, "text-sm font-body mb-2")}
+        className={twMerge(variants[variant].label, "text-xs font-body mb-2")}
       >
         {label}
       </label>
@@ -39,7 +39,7 @@ export const Input = forwardRef<HTMLInputElement,InputProps>(({ label, variant, 
         id={label}
         className={twMerge(
           variants[variant].input,
-          className, "text-black font-body py-3 rounded-xl border"
+          className, "text-black font-body py-3 rounded-xl border pl-2 pr-2"
         )}
         {...rest}
         ref={ref}
