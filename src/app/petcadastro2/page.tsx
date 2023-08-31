@@ -1,5 +1,5 @@
 import { ageRanges } from "@/utils/age";
-import { Header, Button, Section, FormGroup, RadioButton, Select, Input } from "../components";
+import { Header, Button, Section, FormGroup, RadioButton, Select, Input, TextArea } from "../components";
 const PetRegister2 = () => {
   return (
     <>
@@ -16,6 +16,7 @@ const PetRegister2 = () => {
             <div className="mt-7">
               <Input
                 label="Qual o nome do seu bichinho?"
+                placeholder="Nome do Bichinho"
                 type="text"
                 variant="adopter"
               />
@@ -41,6 +42,11 @@ const PetRegister2 = () => {
                 <RadioButton label="Não sei" value="naosabe" />
               </div>
             </FormGroup>
+            <TextArea
+              label="Conta um pouco sobre o animalzinho:"
+              placeholder="Conta pra gente a história do seu bichinho, porque você quer doar, ou como o encontrou, como o pet é no dia a dia."
+              className="h-64 resize-none"
+            />
           </div>
           <div className="flex justify-end mb-9">
             <Button
