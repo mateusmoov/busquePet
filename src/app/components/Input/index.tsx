@@ -6,11 +6,12 @@ type VariantsProps = {
   input: string;
 };
 
-type InputProps = ComponentPropsWithRef<'input'> & {
+type InputProps = ComponentPropsWithRef<"input"> & {
   label: string;
   type: string;
   variant: VariantProps;
-  className?: string
+  className?: string;
+  hint?: string;
 };
 
 type VariantProps = keyof typeof variants;
@@ -26,7 +27,7 @@ const variants = {
   },
 } satisfies Record<string, VariantsProps>;
 
-export const Input = forwardRef<HTMLInputElement,InputProps>(({ label, variant, className, ...rest }, ref) => {
+export const Input = forwardRef<HTMLInputElement,InputProps>(({ label, variant, hint, className, ...rest }, ref) => {
   return (
     <div className="flex flex-col">
       <label
@@ -44,6 +45,7 @@ export const Input = forwardRef<HTMLInputElement,InputProps>(({ label, variant, 
         {...rest}
         ref={ref}
       />
+      <span className="text-xs font-body font-medium text-zinc-500">{hint}</span>
     </div>
   );
 });

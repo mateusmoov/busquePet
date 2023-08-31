@@ -4,17 +4,16 @@ import { twMerge } from "tailwind-merge";
 type TextAreaProps = ComponentPropsWithRef<"textarea"> & {
   label: string;
   className?: string;
+  hint?: string;
 };
 
 export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
-  ({ label, className, ...rest }, ref) => {
+  ({ label, hint, className, ...rest }, ref) => {
     return (
       <div className="flex flex-col">
         <label
           htmlFor={label}
-          className={
-            "text-xs font-body mb-2 text-cyan-700"
-          }
+          className={"text-xs font-body mb-2 text-cyan-700"}
         >
           {label}
         </label>
@@ -27,6 +26,9 @@ export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
           {...rest}
           ref={ref}
         />
+        <span className="text-xs font-body font-medium text-zinc-500">
+          {hint}
+        </span>
       </div>
     );
   }

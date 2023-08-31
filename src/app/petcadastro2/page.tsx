@@ -19,6 +19,7 @@ const PetRegister2 = () => {
                 placeholder="Nome do Bichinho"
                 type="text"
                 variant="adopter"
+                hint="Se não tiver nome, você pode criar um para o cadastro"
               />
             </div>
             <FormGroup
@@ -46,6 +47,8 @@ const PetRegister2 = () => {
               label="Conta um pouco sobre o animalzinho:"
               placeholder="Conta pra gente a história do seu bichinho, porque você quer doar, ou como o encontrou, como o pet é no dia a dia."
               className="h-64 resize-none"
+              hint="Esta mensagem ficará na descrição sobre o pet.
+Você poderá editá-la depois."
             />
           </div>
           <div className="flex justify-end mb-9">
