@@ -24,24 +24,25 @@ const variants = {
 
 export const FormGroup = ({ label, variant, children, className }: FormGroupProps) => {
   return (
-    <>
-      <label
-        htmlFor={label}
-        className={twMerge(
-          variants[variant].label,
-          "text-sm font-body mb-2 block"
-        )}
-      >
-        {label}
-      </label>
-      <div
-        className={twMerge(
-          variants[variant].outlined,
-          className, "rounded-lg outline outline-1 block px-4 pl-4"
-        )}
-      >
-        {children}
+      <div className="flex flex-col">
+        <label
+          htmlFor={label}
+          className={twMerge(
+            variants[variant].label,
+            "font-body mb-2 flex flex-col text-xs"
+          )}
+        >
+          {label}
+        </label>
+        <div
+          className={twMerge(
+            variants[variant].outlined,
+            className,
+            "rounded-lg outline outline-1 block px-4 pl-4"
+          )}
+        >
+          {children}
+        </div>
       </div>
-    </>
   );
 };

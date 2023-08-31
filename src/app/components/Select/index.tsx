@@ -42,7 +42,7 @@ variant,
       <label
         className={twMerge(
           variants[variant].label,
-          "flex flex-col text-xs mb-2"
+          "flex flex-col text-xs mb-2 font-body"
         )}
         htmlFor={label}
       >
