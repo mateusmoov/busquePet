@@ -26,7 +26,7 @@ export const TextArea = forwardRef<HTMLTextAreaElement, TextAreaProps>(
           {...rest}
           ref={ref}
         />
-        <span className="text-xs font-body font-medium text-zinc-500">
+        <span className="text-xs font-body font-medium text-zinc-500 mt-1">
           {hint}
         </span>
       </div>

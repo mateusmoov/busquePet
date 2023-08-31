@@ -45,7 +45,7 @@ export const Input = forwardRef<HTMLInputElement,InputProps>(({ label, variant, 
         {...rest}
         ref={ref}
       />
-      <span className="text-xs font-body font-medium text-zinc-500">{hint}</span>
+      <span className="text-xs font-body font-medium text-zinc-500 mt-1">{hint}</span>
     </div>
   );
 });
