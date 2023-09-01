@@ -8,3 +8,4 @@ export { FormGroup } from './FormGroup'
 export { RadioButton } from "./RadioButton";
 export { Section } from './Section'
 export { TextArea } from "./TextArea";
+export { ImagePreview } from './ImagePreview'
