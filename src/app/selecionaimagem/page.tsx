@@ -29,7 +29,7 @@ const ImageSelection = () => {
             <Button
               variant="filled"
               icon="arrowRight"
-              className="bg-cyan-700 flex px-14 py-3 items-center font-medium"
+              className="bg-cyan-700  text-white flex px-14 py-3 items-center font-medium"
             >
               Próximo
             </Button>

@@ -41,7 +41,7 @@ export const ImageUpload = () => {
     };
 
     return (
-      <div className="flex items-center flex-col">
+      <div className="flex items-center flex-col gap-y-4">
         <div className="flex">
           <label
             htmlFor="dropzone-file"
@@ -54,7 +54,7 @@ export const ImageUpload = () => {
                 width="55"
                 height="55"
               />
-              <p className="mb-2 text-sm text-gray-500 dark:text-gray-400">
+              <p className="mb-2 text-sm text-gray-500 text-center dark:text-gray-400">
                 <span className="font-semibold">Arraste ou clique aqui</span>{" "}
                 para adicionar uma imagem
               </p>
@@ -66,6 +66,7 @@ export const ImageUpload = () => {
               id="dropzone-file"
               type="file"
               className="hidden"
+              accept="image/*"
               onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
                 image.forEach((item, index) => {
                   if (!item.imageFromUser) {
