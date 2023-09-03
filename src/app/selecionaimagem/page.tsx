@@ -1,93 +1,41 @@
 "use client"
-
-import Image from "next/image";
-import { ImagePreview } from "../components";
-import React, { useState } from "react";
-import { ImagePreviewProps } from "../components/ImagePreview";
+import { Header, Button, Section , ImageUpload } from "../components";
 
 const ImageSelection = () => {
-  const [image, setImage] = useState<ImagePreviewProps[]>([
-    {
-      src: "/icons/image.svg",
-      imageFromUser: false,
-    },
-    {
-      src: "/icons/image.svg",
-      imageFromUser: false,
-    },
-    {
-      src: "/icons/image.svg",
-      imageFromUser: false,
-    },
-    {
-      src: "/icons/image.svg",
-      imageFromUser: false,
-    },
-    {
-      src: "/icons/image.svg",
-      imageFromUser: false,
-    },
-  ]);
-
-  const handleUpdateImage = (
-    event: React.ChangeEvent<HTMLInputElement>,
-    index: number
-  ) => {
-    const updatedImage = [...image];
-    updatedImage[index] = {
-      src: URL.createObjectURL(event.target.files![0]),
-      imageFromUser: true,
-    };
-    setImage(updatedImage);
-  };
-  
   return (
     <>
-      <div className="flex items-center flex-col">
-        <div className="flex">
-          <label
-            htmlFor="dropzone-file"
-            className="flex flex-col items-center justify-center h-64 border border-zinc-400 border-dashed rounded-lg cursor-pointer"
-          >
-            <div className="flex flex-col items-center justify-center pt-5 pb-6 px-4">
-              <Image
-                alt="Adicione uma foto"
-                src="/icons/camera.svg"
-                width="55"
-                height="55"
-              />
-              <p className="mb-2 text-sm text-gray-500 dark:text-gray-400">
-                <span className="font-semibold">Arraste ou clique aqui</span>{" "}
-                para adicionar uma imagem
-              </p>
-              <p className="text-xs text-gray-500 dark:text-gray-400">
-                PNG ou JPG (MAX. 800x400px)
-              </p>
+      <Header variant="donor" icon>
+        <div className="flex flex-col gap-x-2 ml-7 py-4">
+          <span className="font-header text-white text-xl font-semibold">
+            Vamos ajudar o bichinho a encontrar um lar de amor?!
+          </span>
+        </div>
+      </Header>
+      <main>
+        <Section>
+          <div className="flex min-h-[calc(100vh_-_10rem)] flex-col">
+            <div className="flex flex-col gap-y-2">
+              <span className="mt-6 font-header text-black text-xs text-center flex justify-center">
+                As fotos fazem toda a diferença para o bichinho conseguir um lar
+                que vai dar amor para ele.
+              </span>
+              <span className="mb-11 font-header text-black text-xs text-center flex justify-center">
+                quanto mais foto melhor! ❤
+              </span>
             </div>
-            <input
-              id="dropzone-file"
-              type="file"
-              className="hidden"
-              onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
-                image.forEach((item, index) => {
-                  if (!item.imageFromUser) {
-                    handleUpdateImage(event, index);
-                  }
-                });
-              }}
-            />
-          </label>
-        </div>
-        <div className="flex gap-x-2">
-          {image.map((image, index) => (
-            <ImagePreview
-              src={image.src}
-              imageFromUser={image.imageFromUser}
-              key={index}
-            />
-          ))}
-        </div>
-      </div>
+            <ImageUpload />
+          </div>
+          <div className="flex justify-end mb-9">
+            <Button
+              variant="filled"
+              icon="arrowRight"
+              className="bg-cyan-700 flex px-14 py-3 items-center font-medium"
+            >
+              Próximo
+            </Button>
+          </div>
+        </Section>
+      </main>
     </>
   );
 };

@@ -1,4 +1,3 @@
-
 export { Button } from "./Button";
 export { Icon } from "./Icon";
 export { Header } from "./Header"
@@ -9,3 +8,4 @@ export { RadioButton } from "./RadioButton";
 export { Section } from './Section'
 export { TextArea } from "./TextArea";
 export { ImagePreview } from './ImagePreview'
+export { ImageUpload } from "./ImageUpload";
