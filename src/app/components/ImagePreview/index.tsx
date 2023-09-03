@@ -5,10 +5,15 @@ import { twMerge } from "tailwind-merge"
 export type ImagePreviewProps = {
   src: string
   imageFromUser: boolean
+  onCloseClick?: () => void;
 }
 
 
- export const ImagePreview = ({ src, imageFromUser }: ImagePreviewProps) => {
+ export const ImagePreview = ({
+   src,
+   imageFromUser,
+   onCloseClick,
+ }: ImagePreviewProps) => {
    return (
      <div
        className={twMerge(
@@ -18,7 +23,7 @@ export type ImagePreviewProps = {
      >
        <div className="absolute -top-3 -right-1">
          {imageFromUser && (
-           <button>
+           <button onClick={onCloseClick}>
              <Image
                src="/icons/close.svg"
                alt="Apagar imagem"

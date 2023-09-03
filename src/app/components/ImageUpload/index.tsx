@@ -40,6 +40,17 @@ export const ImageUpload = () => {
       setImage(updatedImage);
     };
 
+        const handleRemoveImage = (
+          index: number
+        ) => {
+          const updatedImage = [...image];
+          updatedImage[index] = {
+            src: "/icons/image.svg",
+            imageFromUser: false,
+          };
+          setImage(updatedImage);
+        };
+
     return (
       <div className="flex items-center flex-col gap-y-4">
         <div className="flex">
@@ -80,6 +91,7 @@ export const ImageUpload = () => {
         <div className="flex gap-x-2 flex-row-reverse">
           {image.map((image, index) => (
             <ImagePreview
+              onCloseClick={() => handleRemoveImage(index)}
               src={image.src}
               imageFromUser={image.imageFromUser}
               key={index}
