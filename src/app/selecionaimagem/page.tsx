@@ -1,5 +1,5 @@
-"use client"
-import { Header, Button, Section , ImageUpload } from "../components";
+"use client";
+import { Header, Button, Section, ImageUpload } from "../components";
 
 const ImageSelection = () => {
   return (
