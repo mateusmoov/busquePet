@@ -1,5 +1,6 @@
 
 import Image from "next/image"
+import { twMerge } from "tailwind-merge"
 
 export type ImagePreviewProps = {
   src: string
@@ -9,7 +10,12 @@ export type ImagePreviewProps = {
 
  export const ImagePreview = ({ src, imageFromUser }: ImagePreviewProps) => {
    return (
-     <div className="bg-zinc-50 border border-dashed border-zinc-400 w-fit rounded relative">
+     <div
+       className={twMerge(
+         "bg-zinc-50 border-zinc-400 w-fit rounded relative",
+         !imageFromUser && "border border-dashed"
+       )}
+     >
        <div className="absolute -top-3 -right-1">
          {imageFromUser && (
            <button>

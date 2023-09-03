@@ -77,7 +77,7 @@ export const ImageUpload = () => {
             />
           </label>
         </div>
-        <div className="flex gap-x-2">
+        <div className="flex gap-x-2 flex-row-reverse">
           {image.map((image, index) => (
             <ImagePreview
               src={image.src}
