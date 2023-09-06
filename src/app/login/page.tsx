@@ -25,7 +25,7 @@ const Login = () => {
           <div className="flex justify-center mb-20 mt-14">
             <Image
               alt="Logo do BusquePet"
-              src="/icons/busquepet_logo.svg"
+              src="/logos/busquepet_logo_letter.svg"
               width="222"
               height="192"
             />
@@ -79,7 +79,7 @@ const Login = () => {
               value="submit"
               variant="filled"
               icon="checkmark"
-              className="bg-fuchsia-800 flex px-14 py-3 items-center font-medium"
+              className="bg-fuchsia-800 flex px-14 py-3 items-center font-medium text-white"
             >
               Entrar
             </Button>
