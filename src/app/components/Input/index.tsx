@@ -1,5 +1,6 @@
 import { ComponentPropsWithRef, forwardRef } from "react";
 import { twMerge } from "tailwind-merge";
+import { Icon } from "@/app/components";
 
 type VariantsProps = {
   label: string;
@@ -27,27 +28,40 @@ const variants = {
   },
 } satisfies Record<string, VariantsProps>;
 
-export const Input = forwardRef<HTMLInputElement,InputProps>(({ label, variant, hint, className, ...rest }, ref) => {
-  return (
-    <div className="flex flex-col">
-      <label
-        htmlFor={label}
-        className={twMerge(variants[variant].label, "text-xs font-body mb-2")}
-      >
-        {label}
-      </label>
-      <input
-        id={label}
-        className={twMerge(
-          variants[variant].input,
-          className, "text-black font-body py-3 rounded-xl border pl-2 pr-2 placeholder:text-neutral-200"
+export const Input = forwardRef<HTMLInputElement, InputProps>(
+  ({ label, variant, hint, className, ...rest }, ref) => {
+    return (
+      <div className="flex flex-col relative">
+        <label
+          htmlFor={label}
+          className={twMerge(
+            variants[variant].label,
+            "text-xs font-body mb-2 relative"
+          )}
+        >
+          {label}
+        </label>
+        <input
+          id={label}
+          className={twMerge(
+            variants[variant].input,
+            className,
+            "text-black font-body py-3 rounded-xl border pl-2 pr-2 placeholder:text-neutral-200"
+          )}
+          {...rest}
+          ref={ref}
+        />
+        {rest.type === "password" && (
+            <button className="absolute right-3 bottom-">
+              <Icon variant="eyes" />
+            </button>
         )}
-        {...rest}
-        ref={ref}
-      />
-      <span className="text-xs font-body font-medium text-zinc-500 mt-1">{hint}</span>
-    </div>
-  );
-});
+        <span className="text-xs font-body font-medium text-zinc-500 mt-1">
+          {hint}
+        </span>
+      </div>
+    );
+  }
+);
 
-Input.displayName = 'input'
+Input.displayName = "input";

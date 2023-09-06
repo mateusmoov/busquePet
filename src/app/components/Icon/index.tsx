@@ -25,6 +25,10 @@ const variants = {
     image: "/icons/checkmark.svg",
     alt: "checkmark",
   },
+  eyes: {
+    image: "/icons/eyes.svg",
+    alt: "Visualizar senha",
+  },
 } satisfies Record<string, VariantsProps>;
 
 export const Icon = ({ variant, className }: IconProps) => {
