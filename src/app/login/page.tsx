@@ -45,6 +45,7 @@ const Login = () => {
               </span>
             )}
             <Input
+              togglePasswordVisibility
               type="password"
               label="Senha"
               variant="donor"

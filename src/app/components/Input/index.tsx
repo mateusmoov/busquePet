@@ -1,4 +1,6 @@
-import { ComponentPropsWithRef, forwardRef } from "react";
+'use client'
+
+import { ComponentPropsWithRef, forwardRef, useState } from "react";
 import { twMerge } from "tailwind-merge";
 import { Icon } from "@/app/components";
 
@@ -13,6 +15,7 @@ type InputProps = ComponentPropsWithRef<"input"> & {
   variant: VariantProps;
   className?: string;
   hint?: string;
+  togglePasswordVisibility?: boolean
 };
 
 type VariantProps = keyof typeof variants;
@@ -29,7 +32,19 @@ const variants = {
 } satisfies Record<string, VariantsProps>;
 
 export const Input = forwardRef<HTMLInputElement, InputProps>(
-  ({ label, variant, hint, className, ...rest }, ref) => {
+  ({ label, variant, hint, className, togglePasswordVisibility = false, ...rest }, ref) => {
+    const [isPasswordVisible, setPasswordVisible] = useState(true);
+
+const handleTogglePasswordVisibility = (
+  event: React.MouseEvent<HTMLElement>
+) => {
+  event.preventDefault();
+  setPasswordVisible(!isPasswordVisible);
+};
+
+const inputType = isPasswordVisible ? "text" : "password"
+
+
     return (
       <div className="flex flex-col relative">
         <label
@@ -49,12 +64,16 @@ export const Input = forwardRef<HTMLInputElement, InputProps>(
             "text-black font-body py-3 rounded-xl border pl-2 pr-2 placeholder:text-neutral-200"
           )}
           {...rest}
+          type={inputType}
           ref={ref}
         />
-        {rest.type === "password" && (
-            <button className="absolute right-3 bottom-">
-              <Icon variant="eyes" />
-            </button>
+        {togglePasswordVisibility && (
+          <button
+            className="absolute right-3 bottom-5"
+            onClick={(event) => handleTogglePasswordVisibility(event)}
+          >
+            <Icon variant="eyes" />
+          </button>
         )}
         <span className="text-xs font-body font-medium text-zinc-500 mt-1">
           {hint}
