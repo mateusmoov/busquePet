@@ -1,5 +1,12 @@
-import { ageRanges } from "@/utils/age";
-import { Header, Button, Section, FormGroup, RadioButton, Select, Input, TextArea } from "../components";
+import {
+  Header,
+  Button,
+  Section,
+  FormGroup,
+  RadioButton,
+  Input,
+  TextArea,
+} from "../components";
 const PetRegister2 = () => {
   return (
     <>

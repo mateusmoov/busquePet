@@ -1,7 +1,10 @@
+"use client"
+
 import { brazilStates } from "@/utils/stateBrazil";
 import { Header, Button, Section, Input, Select } from "../components";
 
 const PersonContact = () => {
+  
   return (
     <>
       <Header variant="donor" icon>
@@ -38,15 +41,15 @@ const PersonContact = () => {
                 variant="donor"
               />
               <Input
+                  label="Seu Bairro"
+                  type="text"
+                  variant="donor"
+                />
+              <Input
                 label="Seu Endereço"
                 type="text"
                 variant="donor"
                 placeholder="Ex.: Rua dos Bichinhos Felizes"
-              />
-              <Input
-                label="Seu Bairro"
-                type="text"
-                variant="donor"
               />
             </div>
           </div>
