@@ -1,4 +1,6 @@
-import { Header, Button, Section, Input } from "../components";
+"use client"
+
+import { Input, Header, Button, Section } from "../components";
 
 const PersonContact = () => {
   return (
@@ -23,33 +25,33 @@ const PersonContact = () => {
               <Input
                 label="Seu número"
                 type="number"
-                variant="adopter"
+                variant="donor"
                 placeholder="(xx) 9 9999-9999"
               />
               <Input
                 label="Seu e-mail"
                 type="email"
-                variant="adopter"
+                variant="donor"
                 placeholder="exemplo@email.com"
               />
               <Input
                 label="Repita seu e-mail"
                 type="email"
-                variant="adopter"
+                variant="donor"
                 placeholder="exemplo@email.com"
               />
               <Input
                 togglePasswordVisibility
                 label="Crie uma senha"
                 type="password"
-                variant="adopter"
+                variant="donor"
                 placeholder="********"
               />
               <Input
                 togglePasswordVisibility
                 label="Repita a sua senha"
                 type="password"
-                variant="adopter"
+                variant="donor"
                 placeholder="********"
               />
             </div>

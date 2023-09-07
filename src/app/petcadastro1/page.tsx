@@ -16,7 +16,7 @@ const PetRegister1 = () => {
             <div className="mt-7">
               <FormGroup
                 label="Seu pet é um:"
-                variant="adopter"
+                variant="donor"
                 className="py-4"
               >
                 <div className="flex flex-col gap-y-4">
@@ -27,7 +27,7 @@ const PetRegister1 = () => {
             </div>
             <FormGroup
               label="O gênero do seu bichinho é:"
-              variant="adopter"
+              variant="donor"
               className="py-4"
             >
               <div className="flex flex-col gap-y-4">
@@ -37,7 +37,7 @@ const PetRegister1 = () => {
             </FormGroup>
             <FormGroup
               label="Qual o porte do bichinho?"
-              variant="adopter"
+              variant="donor"
               className="py-4"
             >
               <div className="flex flex-col gap-y-4">
@@ -48,7 +48,7 @@ const PetRegister1 = () => {
             </FormGroup>
             <Select
               label="Qual a idade do seu bichinho?"
-              variant="adopter"
+              variant="donor"
               selectItems={ageRanges}
             />
           </div>

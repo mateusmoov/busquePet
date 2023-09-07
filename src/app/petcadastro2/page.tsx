@@ -18,13 +18,13 @@ const PetRegister2 = () => {
                 label="Qual o nome do seu bichinho?"
                 placeholder="Nome do Bichinho"
                 type="text"
-                variant="adopter"
+                variant="donor"
                 hint="Se não tiver nome, você pode criar um para o cadastro"
               />
             </div>
             <FormGroup
               label="O seu animalzinho já tem todas as vacinas?"
-              variant="adopter"
+              variant="donor"
               className="py-4"
             >
               <div className="flex flex-col gap-y-4">

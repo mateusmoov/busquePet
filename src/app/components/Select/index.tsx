@@ -21,11 +21,11 @@ type VariantsProps = {
 type VariantProps = keyof typeof variants;
 
 const variants = {
-  donor: {
+  adopter: {
     label: "text-fuchsia-800",
     select: "border-fuchsia-800",
   },
-  adopter: {
+  donor: {
     label: "text-cyan-700",
     select: "border-cyan-700",
   },

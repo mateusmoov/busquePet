@@ -3,7 +3,6 @@
 import Image from "next/image";
 import { Input, Button, Section } from "../components";
 import { useForm, SubmitHandler } from "react-hook-form";
-import { error } from "console";
 
 type InputLoginType = {
   email: string;
@@ -22,7 +21,7 @@ const Login = () => {
     <main className="flex items-center justify-center h-screen">
       <Section>
         <form className="flex flex-col gap-3" onSubmit={handleSubmit(onSubmit)}>
-          <div className="flex justify-center mb-20 mt-14">
+          <div className="flex justify-center mb-18 mt-14">
             <Image
               alt="Logo do BusquePet"
               src="/logos/busquepet_logo_letter.svg"
@@ -35,28 +34,36 @@ const Login = () => {
               type="email"
               placeholder="exemplo@exemplo.com"
               label="E-mail"
-              variant="donor"
+              variant="adopter"
               className="pl-2"
               {...register("email", { required: true })}
             />
-            {errors.email && (
-              <span className="font-body text-pink-700 font-medium">
-                Campo de email é obrigatório
-              </span>
-            )}
             <Input
               togglePasswordVisibility
               type="password"
               label="Senha"
-              variant="donor"
+              variant="adopter"
               className="pl-2"
               {...register("password", { required: true })}
             />
-            {errors.password && (
-              <span className="font-body text-pink-700 font-medium">
-                Campo de senha é obrigatório
-              </span>
-            )}
+            <div className="flex justify-end">
+              <a
+                href="/"
+                className="font-body font-medium text-sky-700 underline underline-offset-2"
+              >
+                Esqueci minha senha
+              </a>
+            </div>
+            <div className="flex justify-center mt-4">
+              <Button
+                type="submit"
+                value="submit"
+                variant="filled"
+                className="bg-fuchsia-800 flex px-14 py-3 items-center font-medium text-white w-full text-center justify-center"
+              >
+                Entrar
+              </Button>
+            </div>
           </div>
           <div className="flex flex-col text-center mb-14">
             <span className="font-body">Ainda não possui conta?</span>
@@ -66,23 +73,6 @@ const Login = () => {
             >
               Cadastre-se
             </a>
-            <a
-              href="/"
-              className="font-body font-medium text-sky-700 underline underline-offset-2"
-            >
-              Esqueci minha senha
-            </a>
-          </div>
-          <div className="flex justify-end">
-            <Button
-              type="submit"
-              value="submit"
-              variant="filled"
-              icon="checkmark"
-              className="bg-fuchsia-800 flex px-14 py-3 items-center font-medium text-white"
-            >
-              Entrar
-            </Button>
           </div>
         </form>
       </Section>

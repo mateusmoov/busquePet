@@ -24,29 +24,29 @@ const PersonContact = () => {
               <Input
                 label="Seu CEP"
                 type="number"
-                variant="adopter"
+                variant="donor"
                 placeholder="00000-000"
               />
               <Select
                 selectItems={brazilStates}
                 label="Seu e-mail"
-                variant="adopter"
+                variant="donor"
               />
               <Input
                 label="Sua Cidade"
                 type="text"
-                variant="adopter"
+                variant="donor"
               />
               <Input
                 label="Seu Endereço"
                 type="text"
-                variant="adopter"
+                variant="donor"
                 placeholder="Ex.: Rua dos Bichinhos Felizes"
               />
               <Input
                 label="Seu Bairro"
                 type="text"
-                variant="adopter"
+                variant="donor"
               />
             </div>
           </div>

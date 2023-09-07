@@ -21,11 +21,11 @@ type InputProps = ComponentPropsWithRef<"input"> & {
 type VariantProps = keyof typeof variants;
 
 const variants = {
-  donor: {
+  adopter: {
     label: "text-fuchsia-800",
     input: "border-fuchsia-800",
   },
-  adopter: {
+  donor: {
     label: "text-cyan-700",
     input: "border-cyan-700",
   },

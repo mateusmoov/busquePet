@@ -20,8 +20,8 @@ const PersonData = () => {
               Seus Dados Pessoais
             </span>
             <div className="flex flex-col gap-y-5">
-              <Input label="Seu Nome Completo" type="text" variant="adopter" />
-              <Input label="Data de nascimento" type="date" variant="adopter" />
+              <Input label="Seu Nome Completo" type="text" variant="donor" />
+              <Input label="Data de nascimento" type="date" variant="donor" />
             </div>
           </div>
           <div className="flex justify-end mb-9">

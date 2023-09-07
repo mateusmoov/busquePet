@@ -4,7 +4,7 @@ import { Header, Button, Section, Input, Select } from "../components";
 const PersonContact = () => {
   return (
     <>
-      <Header variant="adopter" icon>
+      <Header variant="donor" icon>
         <div className="flex flex-col gap-x-2 ml-7 py-4">
           <span className="font-header text-white text-xl font-semibold">
             Você quer doar!

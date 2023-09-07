@@ -17,7 +17,7 @@ const PersonType = () => {
             <span className="mb-11 mt-6 font-header text-cyan-700 font-semibold text-lg flex justify-center">
               Vamos começar!
             </span>
-            <FormGroup label="Você é:" variant="adopter" className="py-4">
+            <FormGroup label="Você é:" variant="donor" className="py-4">
               <div className="flex flex-col gap-y-4">
                 <RadioButton label="Pessoa física" value="fisica" />
                 <RadioButton label="Pessoa Jurídica (ONG)" value="fisica" />

@@ -16,7 +16,7 @@ type FormGroupProps = {
 type VariantProps = keyof typeof variants;
 
 const variants = {
-  adopter: {
+  donor: {
     label: "text-cyan-700",
     outlined: "outline-cyan-700 px-4 pl-4 ",
   },
