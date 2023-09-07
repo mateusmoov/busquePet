@@ -39,12 +39,14 @@ const PersonContact = () => {
                 placeholder="exemplo@email.com"
               />
               <Input
+                togglePasswordVisibility
                 label="Crie uma senha"
                 type="password"
                 variant="adopter"
                 placeholder="********"
               />
               <Input
+                togglePasswordVisibility
                 label="Repita a sua senha"
                 type="password"
                 variant="adopter"

@@ -25,6 +25,7 @@ const PersonDataAdopter = () => {
               <Input label="Seu E-mail" type="email" variant="donor" />
               <Input label="Crie uma senha" type="password" variant="donor" />
               <Input
+                togglePasswordVisibility
                 label="Confirme sua senha"
                 type="password"
                 variant="donor"
