@@ -2,9 +2,26 @@
 
 import { brazilStates } from "@/utils/stateBrazil";
 import { Header, Button, Section, Input, Select } from "../components";
+import { useQuery } from "@tanstack/react-query";
+import { getLocationData } from "@/services/api";
+
+type LocalizationType = {
+  logradouro: string
+  bairro: string
+  localidade: string
+}
+
 
 const PersonContact = () => {
-  
+
+  const { data, isLoading } = useQuery<LocalizationType[]>({
+    queryKey: ["localizationInfo"],
+    queryFn: () => getLocationData(71720023),
+  });
+
+  console.log(data)
+
+
   return (
     <>
       <Header variant="donor" icon>
