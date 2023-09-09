@@ -1,4 +1,5 @@
 export const brazilStates = [
+  { name: "", value: "" },
   { name: "Acre", value: "AC" },
   { name: "Alagoas", value: "AL" },
   { name: "Amapá", value: "AP" },

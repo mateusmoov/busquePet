@@ -33,9 +33,10 @@ const variants = {
 
 export const Select = ({
   label,
-variant,
+  variant,
   selectItems,
   onChangeValue,
+  ...rest
 }: SelectProps) => {
   return (
     <div className="flex flex-col">
@@ -56,6 +57,7 @@ variant,
           variants[variant].select,
           "text-black font-body py-3 rounded-xl border block pl-2 pr-2 bg-white"
         )}
+        {...rest}
       >
         {selectItems.map((item, index: number) => (
           <option key={index} value={item.value}>
