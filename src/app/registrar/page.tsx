@@ -14,9 +14,9 @@ import { useMultiStepForm } from "@/hooks/useMultiStepForm";
 import { Button, Section, Header } from "../components";
 
 const RegisterSteps = () => {
-  const { step, currentStepIndex, next, back } = useMultiStepForm([
-    <DonorContactData key="contact" />,
+  const { step, next, back } = useMultiStepForm([
     <DonorPersonData key="person" />,
+    <DonorContactData key="contact" />,
     <DonorLocationData key="location" />,
     <SuccessRegister key="success" />,
     <PetRegister1 key="pet1" />,

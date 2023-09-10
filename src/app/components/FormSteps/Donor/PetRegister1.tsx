@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { ageRanges } from "@/utils/age";
 import {
@@ -37,64 +37,47 @@ export const PetRegister1 = () => {
   });
 
   return (
-
-      <main>
-        <Section>
-          <form>
-            <div className="flex min-h-[100vh] flex-col gap-y-8">
-              <div className="mt-7">
-                <FormGroup
-                  label="Seu pet é um:"
-                  variant="donor"
-                  className="py-4"
-                >
-                  <div className="flex flex-col gap-y-4">
-                    <RadioButton label="Cachorro" value="cachorro" />
-                    <RadioButton label="Gato" value="gato" />
-                  </div>
-                </FormGroup>
+    <main>
+      <Section>
+        <div className="flex min-h-[100vh] flex-col gap-y-8">
+          <div className="mt-7">
+            <FormGroup label="Seu pet é um:" variant="donor" className="py-4">
+              <div className="flex flex-col gap-y-4">
+                <RadioButton label="Cachorro" value="cachorro" />
+                <RadioButton label="Gato" value="gato" />
               </div>
-              <div>
-                <FormGroup
-                  label="O gênero do seu bichinho é:"
-                  variant="donor"
-                  className="py-4"
-                >
-                  <div className="flex flex-col gap-y-4">
-                    <RadioButton label="Fêmea" value="femea" />
-                    <RadioButton label="Macho" value="macho" />
-                  </div>
-                </FormGroup>
+            </FormGroup>
+          </div>
+          <div>
+            <FormGroup
+              label="O gênero do seu bichinho é:"
+              variant="donor"
+              className="py-4"
+            >
+              <div className="flex flex-col gap-y-4">
+                <RadioButton label="Fêmea" value="femea" />
+                <RadioButton label="Macho" value="macho" />
               </div>
-              <FormGroup
-                label="Qual o porte do bichinho?"
-                variant="donor"
-                className="py-4"
-              >
-                <div className="flex flex-col gap-y-4">
-                  <RadioButton label="Pequeno" value="pequeno" />
-                  <RadioButton label="Médio" value="medio" />
-                  <RadioButton label="Grande" value="grande" />
-                </div>
-              </FormGroup>
-              <Select
-                label="Qual a idade do seu bichinho?"
-                variant="donor"
-                selectItems={ageRanges}
-              />
+            </FormGroup>
+          </div>
+          <FormGroup
+            label="Qual o porte do bichinho?"
+            variant="donor"
+            className="py-4"
+          >
+            <div className="flex flex-col gap-y-4">
+              <RadioButton label="Pequeno" value="pequeno" />
+              <RadioButton label="Médio" value="medio" />
+              <RadioButton label="Grande" value="grande" />
             </div>
-            <div className="flex justify-end mb-9">
-              <Button
-                variant="filled"
-                icon="arrowRight"
-                className="bg-cyan-700 flex px-14 py-3 items-center font-medium text-white"
-              >
-                Próximo
-              </Button>
-            </div>
-          </form>
-        </Section>
-      </main>
+          </FormGroup>
+          <Select
+            label="Qual a idade do seu bichinho?"
+            variant="donor"
+            selectItems={ageRanges}
+          />
+        </div>
+      </Section>
+    </main>
   );
 };
-

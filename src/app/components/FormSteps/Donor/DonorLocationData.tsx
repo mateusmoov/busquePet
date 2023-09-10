@@ -36,7 +36,7 @@ export const DonorLocationData = () => {
         <Section>
           <div className="flex min-h-[calc(100vh_-_10rem)] flex-col">
             <span className="mb-11 mt-6 font-header text-cyan-700 font-semibold text-lg flex justify-center">
-              Seus Dados para Contato
+              Seus Dados para Localização
             </span>
             <div className="flex flex-col gap-y-5">
               <Input
