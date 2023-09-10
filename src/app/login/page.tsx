@@ -3,18 +3,30 @@
 import Image from "next/image";
 import { Input, Button, Section } from "../components";
 import { useForm, SubmitHandler } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { z } from "zod";
 
 type InputLoginType = {
   email: string;
   password: string;
 };
 
+const loginSchema = z.object({
+  email: z
+    .string()
+    .nonempty("O e-mail é obrigatório")
+    .email("Formato de e-mail inválido"),
+  password: z.string().nonempty("A senha é obrigatória"),
+});
+
 const Login = () => {
   const {
     handleSubmit,
     register,
     formState: { errors },
-  } = useForm<InputLoginType>();
+  } = useForm<InputLoginType>({
+    resolver: zodResolver(loginSchema),
+  });
 
   const onSubmit: SubmitHandler<InputLoginType> = (data) => console.log(data);
   return (
@@ -30,22 +42,36 @@ const Login = () => {
             />
           </div>
           <div className="flex flex-col gap-3 mb-14">
-            <Input
-              type="email"
-              placeholder="exemplo@exemplo.com"
-              label="E-mail"
-              variant="adopter"
-              className="pl-2"
-              {...register("email", { required: true })}
-            />
-            <Input
-              togglePasswordVisibility
-              type="password"
-              label="Senha"
-              variant="adopter"
-              className="pl-2"
-              {...register("password", { required: true })}
-            />
+            <div>
+              <Input
+                type="email"
+                placeholder="exemplo@exemplo.com"
+                label="E-mail"
+                variant="adopter"
+                className="pl-2"
+                {...register("email", { required: true })}
+              />
+              {errors.email && (
+                <span className="font-body text-sm text-red-800">
+                  {errors.email?.message}
+                </span>
+              )}
+            </div>
+            <div>
+              <Input
+                togglePasswordVisibility
+                type="password"
+                label="Senha"
+                variant="adopter"
+                className="pl-2"
+                {...register("password", { required: true })}
+              />
+              {errors.password && (
+                <span className="font-body text-sm text-red-800">
+                  {errors.password?.message}
+                </span>
+              )}
+            </div>
             <div className="flex justify-end">
               <a
                 href="/"
