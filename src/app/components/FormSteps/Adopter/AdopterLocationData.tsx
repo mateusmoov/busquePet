@@ -1,7 +1,7 @@
 import { brazilStates } from "@/utils/stateBrazil";
-import { Header, Button, Section, Input, Select } from "../components";
+import { Header, Button, Section, Input, Select } from "@/app/components";
 
-const PersonContact = () => {
+export const AdopterLocationData = () => {
   return (
     <>
       <Header variant="donor" icon>
@@ -57,4 +57,3 @@ const PersonContact = () => {
   );
 };
 
-export default PersonContact;

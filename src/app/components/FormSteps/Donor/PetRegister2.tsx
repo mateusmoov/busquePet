@@ -6,8 +6,8 @@ import {
   RadioButton,
   Input,
   TextArea,
-} from "../components";
-const PetRegister2 = () => {
+} from "@/app/components";
+export const PetRegister2 = () => {
   return (
     <>
       <Header variant="donor" icon>
@@ -73,4 +73,3 @@ Você poderá editá-la depois."
   );
 };
 
-export default PetRegister2;

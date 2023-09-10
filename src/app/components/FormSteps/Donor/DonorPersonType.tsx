@@ -1,6 +1,12 @@
-import { Header, Button, Section, Input } from "../components";
+import {
+  Header,
+  FormGroup,
+  RadioButton,
+  Button,
+  Section,
+} from "@/app/components";
 
-const PersonData = () => {
+export const DonorPersonType = () => {
   return (
     <>
       <Header variant="donor" icon>
@@ -8,21 +14,21 @@ const PersonData = () => {
           <span className="font-header text-white text-xl font-semibold">
             Você quer doar!
           </span>
-          <span className="font-header text-white text-sm">
-            Vai ser bem rapidinho!
-          </span>
+          <span className="font-header text-white text-sm">Vamos lá!</span>
         </div>
       </Header>
       <main>
         <Section>
           <div className="flex min-h-[calc(100vh_-_10rem)] flex-col">
             <span className="mb-11 mt-6 font-header text-cyan-700 font-semibold text-lg flex justify-center">
-              Seus Dados Pessoais
+              Vamos começar!
             </span>
-            <div className="flex flex-col gap-y-5">
-              <Input label="Seu Nome Completo" type="text" variant="donor" />
-              <Input label="Data de nascimento" type="date" variant="donor" />
-            </div>
+            <FormGroup label="Você é:" variant="donor" className="py-4">
+              <div className="flex flex-col gap-y-4">
+                <RadioButton label="Pessoa física" value="fisica" />
+                <RadioButton label="Pessoa Jurídica (ONG)" value="fisica" />
+              </div>
+            </FormGroup>
           </div>
           <div className="flex justify-end mb-9">
             <Button
@@ -38,5 +44,3 @@ const PersonData = () => {
     </>
   );
 };
-
-export default PersonData;

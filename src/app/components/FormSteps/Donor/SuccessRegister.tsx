@@ -1,7 +1,7 @@
 import Image from "next/image";
-import { Button, Section } from "../components";
+import { Button, Section } from "@/app/components";
 
-export const SucessRegister = () => {
+export const SuccessRegister = () => {
   return (
     <main className="flex items-center justify-center h-screen">
       <Section>
@@ -40,4 +40,3 @@ export const SucessRegister = () => {
   );
 };
 
-export default SucessRegister;

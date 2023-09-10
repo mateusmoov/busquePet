@@ -1,7 +1,7 @@
 import Image from "next/image";
-import { Section, Button } from "../components";
+import { Section, Button } from "@/app/components";
 
-export const SignIn = () => {
+export const DecisionRegister = () => {
   return (
     <main className="flex items-center justify-center h-screen relative">
       <Section>
@@ -52,4 +52,4 @@ export const SignIn = () => {
 };
 
 
-export default SignIn;
+export default DecisionRegister;

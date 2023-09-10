@@ -1,7 +1,7 @@
 "use client";
-import { Header, Button, Section, ImageUpload } from "../components";
+import { Header, Button, Section, ImageUpload } from "@/app/components";
 
-const ImageSelection = () => {
+export const PetSelectImage = () => {
   return (
     <>
       <Header variant="donor" icon>
@@ -40,4 +40,3 @@ const ImageSelection = () => {
   );
 };
 
-export default ImageSelection;

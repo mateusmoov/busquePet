@@ -1,7 +1,7 @@
 "use client"
 
 import { brazilStates } from "@/utils/stateBrazil";
-import { Header, Button, Section, Input, Select } from "../components";
+import { Header, Button, Section, Input, Select } from "@/app/components";
 import { useQuery } from "@tanstack/react-query";
 import { getLocationData } from "@/services/api";
 import { useEffect, useState } from "react";
@@ -14,26 +14,22 @@ type LocalizationType = {
 }
 
 
-const PersonContact = () => {
-
-  
-  
+export const DonorLocationData = () => {
   const [inputCep, setInputCep] = useState("");
-  
+
   const { data, isLoading } = useQuery<LocalizationType>({
     queryKey: ["localizationInfo"],
     queryFn: () => getLocationData(inputCep),
     enabled: inputCep?.length === 8,
   });
-  
-  const [selectUf, setSelectUf] = useState("")
 
-    useEffect(() => {
-      if (data) {
-        setSelectUf(data.uf);
-      }
-    }, [data]);
+  const [selectUf, setSelectUf] = useState("");
 
+  useEffect(() => {
+    if (data) {
+      setSelectUf(data.uf);
+    }
+  }, [data]);
 
   return (
     <>
@@ -104,4 +100,3 @@ const PersonContact = () => {
   );
 };
 
-export default PersonContact;

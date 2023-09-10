@@ -1,8 +1,8 @@
 "use client"
 
-import { Input, Header, Button, Section } from "../components";
+import { Input, Header, Button, Section } from "@/app/components";
 
-const PersonContact = () => {
+export const DonorContactData = () => {
   return (
     <>
       <Header variant="donor" icon>
@@ -71,4 +71,3 @@ const PersonContact = () => {
   );
 };
 
-export default PersonContact;
