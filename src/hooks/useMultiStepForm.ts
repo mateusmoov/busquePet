@@ -12,10 +12,10 @@ export const useMultiStepForm = (steps: ReactElement[]) => {
 
   const back = () => {
     setCurrentStepIndex(i => {
-      if (i <= 0) return i
-      return i - 1
-    })
-  }
+      if (i <= 0) return i;
+      return i - 1;
+    });
+  };
 
   return {
     currentStepIndex,

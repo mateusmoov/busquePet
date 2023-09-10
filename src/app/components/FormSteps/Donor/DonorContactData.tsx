@@ -5,16 +5,6 @@ import { Input, Header, Button, Section } from "@/app/components";
 export const DonorContactData = () => {
   return (
     <>
-      <Header variant="donor" icon>
-        <div className="flex flex-col gap-x-2 ml-7 py-4">
-          <span className="font-header text-white text-xl font-semibold">
-            Você quer doar!
-          </span>
-          <span className="font-header text-white text-sm">
-            Só mais um pouquinho, certo?!
-          </span>
-        </div>
-      </Header>
       <main>
         <Section>
           <div className="flex min-h-[calc(100vh_-_10rem)] flex-col">
@@ -55,15 +45,6 @@ export const DonorContactData = () => {
                 placeholder="********"
               />
             </div>
-          </div>
-          <div className="flex justify-end mb-9">
-            <Button
-              variant="filled"
-              icon="arrowRight"
-              className="bg-cyan-700 flex px-14 py-3 items-center font-medium"
-            >
-              Próximo
-            </Button>
           </div>
         </Section>
       </main>

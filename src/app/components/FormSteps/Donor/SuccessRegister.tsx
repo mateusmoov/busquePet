@@ -19,24 +19,7 @@ export const SuccessRegister = () => {
             Agora, vamos cadastrar seu animalzinho?
           </span>
         </div>
-        <div className="flex justify-between">
-          <Button
-            className=" border-fuchsia-800 text-fuchsia-800 py-3 px-12 font-medium"
-            variant="outlined"
-            icon="arrowRight"
-          >
-            Pular
-          </Button>
-          <Button
-            className="py-3 px-12 bg-cyan-700 text-white font-medium"
-            variant="filled"
-            icon="arrowRight"
-          >
-            Vamos
-          </Button>
-        </div>
       </Section>
     </main>
   );
 };
-

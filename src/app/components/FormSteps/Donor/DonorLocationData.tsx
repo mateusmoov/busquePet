@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import { brazilStates } from "@/utils/stateBrazil";
 import { Header, Button, Section, Input, Select } from "@/app/components";
@@ -7,12 +7,11 @@ import { getLocationData } from "@/services/api";
 import { useEffect, useState } from "react";
 
 type LocalizationType = {
-  logradouro: string
-  bairro: string
-  localidade: string
-  uf: string
-}
-
+  logradouro: string;
+  bairro: string;
+  localidade: string;
+  uf: string;
+};
 
 export const DonorLocationData = () => {
   const [inputCep, setInputCep] = useState("");
@@ -32,17 +31,7 @@ export const DonorLocationData = () => {
   }, [data]);
 
   return (
-    <>
-      <Header variant="donor" icon>
-        <div className="flex flex-col gap-x-2 ml-7 py-4">
-          <span className="font-header text-white text-xl font-semibold">
-            Você quer doar!
-          </span>
-          <span className="font-header text-white text-sm">
-            Só mais um pouquinho, certo?!
-          </span>
-        </div>
-      </Header>
+      
       <main>
         <Section>
           <div className="flex min-h-[calc(100vh_-_10rem)] flex-col">
@@ -85,18 +74,7 @@ export const DonorLocationData = () => {
               />
             </div>
           </div>
-          <div className="flex justify-end mb-9">
-            <Button
-              variant="filled"
-              icon="arrowRight"
-              className="bg-cyan-700 flex px-14 py-3 items-center font-medium text-white"
-            >
-              Próximo
-            </Button>
-          </div>
         </Section>
       </main>
-    </>
   );
 };
-

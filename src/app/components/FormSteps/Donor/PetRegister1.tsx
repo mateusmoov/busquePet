@@ -37,14 +37,7 @@ export const PetRegister1 = () => {
   });
 
   return (
-    <>
-      <Header variant="donor" icon>
-        <div className="flex flex-col gap-x-2 ml-7 py-4">
-          <span className="font-header text-white text-xl font-semibold">
-            Vamos ajudar o bichinho a encontrar um lar de amor?!
-          </span>
-        </div>
-      </Header>
+
       <main>
         <Section>
           <form>
@@ -102,7 +95,6 @@ export const PetRegister1 = () => {
           </form>
         </Section>
       </main>
-    </>
   );
 };
 

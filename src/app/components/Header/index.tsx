@@ -8,6 +8,7 @@ type VariantKeyProps = keyof typeof variants;
 type HeaderProps = HTMLProps<HTMLDivElement> & {
   variant: VariantKeyProps;
   icon?: boolean;
+  handleBackClick: () => void
 };
 
 const variants = {
@@ -15,14 +16,14 @@ const variants = {
   donor: "bg-donor-header",
 } satisfies VariantProps;
 
-export const Header = ({ children, variant, className, icon, ...rest }: HeaderProps) => {
+export const Header = ({ children, variant, className, icon, handleBackClick, ...rest }: HeaderProps) => {
   return (
     <>
       <header
         className={twMerge(variants[variant], className, "w-full flex ")}
         {...rest}
       >
-        <button>
+        <button onClick={handleBackClick}>
           {icon && <Icon variant="arrowLeft" className="ml-4" />}
         </button>
         {children}
