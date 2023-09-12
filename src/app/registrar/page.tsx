@@ -12,8 +12,10 @@ import {
 } from "../components/FormSteps";
 import { useMultiStepForm } from "@/hooks/useMultiStepForm";
 import { Button, Section, Header } from "../components";
+import { RegisterStepsSchema } from "@/utils/zodSchemas";
 
 const RegisterSteps = () => {
+
   const { step, next, back } = useMultiStepForm([
     <DonorPersonData key="person" />,
     <DonorContactData key="contact" />,

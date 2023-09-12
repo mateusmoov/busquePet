@@ -2,7 +2,7 @@
 
 import { Input, Header, Button, Section } from "@/app/components";
 
-export const DonorContactData = () => {
+export const DonorContactData = ({ register, errors }) => {
   return (
     <>
       <main>
