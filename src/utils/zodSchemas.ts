@@ -2,8 +2,8 @@ import { z } from 'zod'
 
 export const registerStepsSchema = [
   z.object({
-    name: z.string(),
-    birthDate: z.string()
+    name: z.string().nonempty("O e-mail é obrigatório"),
+    birthDate: z.string().nonempty("O data é obrigatória")
   }),
   z.object({
     numero: z.string().refine((value) => /^\(\d{2}\)\s\d\s\d{4}-\d{4}$/.test(value), {

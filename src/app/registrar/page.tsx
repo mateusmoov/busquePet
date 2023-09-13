@@ -1,6 +1,5 @@
 "use client";
 
-import { FormEvent } from "react";
 import {
   DonorContactData,
   DonorPersonData,
@@ -13,10 +12,7 @@ import {
 import { useMultiStepForm } from "@/hooks/useMultiStepForm";
 import { Button, Section, Header } from "../components";
 import { registerStepsSchema } from "@/utils/zodSchemas";
-import {
-  useForm,
-  FormProvider,
-} from "react-hook-form";
+import { useForm, FormProvider } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 const RegisterSteps = () => {
@@ -36,6 +32,18 @@ const RegisterSteps = () => {
     resolver: zodResolver(currentValidationSchema),
   });
 
+  const { handleSubmit, trigger } = methods;
+
+  const onSubmit = (values: any) => {
+    console.log(values);
+  };
+
+  const handleNext = async (event: any) => {
+    event.preventDefault();
+    const isStepValid = await trigger();
+    if (isStepValid) next();
+  };
+
   return (
     <>
       <Header variant="donor" icon handleBackClick={back}>
@@ -48,20 +56,23 @@ const RegisterSteps = () => {
           </span>
         </div>
       </Header>
-      <form>
-        <Section>
-          <FormProvider {...methods}>{step}</FormProvider>
-          <div className="flex justify-end mb-9">
-            <Button
-              variant="filled"
-              icon="arrowRight"
-              className="bg-cyan-700 flex px-14 py-3 items-center font-medium"
-            >
-              Próximo
-            </Button>
-          </div>
-        </Section>
-      </form>
+      <Section>
+        <FormProvider {...methods}>
+          <form>
+            {step}
+            <div className="flex justify-end mb-9">
+              <Button
+                variant="filled"
+                icon="arrowRight"
+                className="bg-cyan-700 flex px-14 py-3 items-center font-medium"
+                onClick={(event: any) => handleNext(event)}
+              >
+                Próximo
+              </Button>
+            </div>
+          </form>
+        </FormProvider>
+      </Section>
     </>
   );
 };
