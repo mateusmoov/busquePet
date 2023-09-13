@@ -1,6 +1,6 @@
 import { z } from 'zod'
 
-export const RegisterStepsSchema = [
+export const registerStepsSchema = [
   z.object({
     name: z.string(),
     birthDate: z.string()

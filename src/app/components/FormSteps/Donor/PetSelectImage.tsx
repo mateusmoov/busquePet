@@ -1,7 +1,7 @@
 "use client";
 import { Header, Button, Section, ImageUpload } from "@/app/components";
 
-export const PetSelectImage = ({ register, errors }) => {
+export const PetSelectImage = () => {
   return (
     <main>
       <Section>

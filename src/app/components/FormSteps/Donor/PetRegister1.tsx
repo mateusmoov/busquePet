@@ -27,7 +27,7 @@ const donorRegisterStep1Schema = z.object({
   ageRange: z.string().nonempty("A idade do pet é obrigatória"),
 });
 
-export const PetRegister1 = ({ register, errors }) => {
+export const PetRegister1 = () => {
   const {
     handleSubmit,
     register,

@@ -13,7 +13,7 @@ type LocalizationType = {
   uf: string;
 };
 
-export const DonorLocationData = ({ register, errors }) => {
+export const DonorLocationData = () => {
   const [inputCep, setInputCep] = useState("");
 
   const { data, isLoading } = useQuery<LocalizationType>({

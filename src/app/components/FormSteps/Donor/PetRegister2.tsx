@@ -7,7 +7,7 @@ import {
   Input,
   TextArea,
 } from "@/app/components";
-export const PetRegister2 = ({ register, errors }) => {
+export const PetRegister2 = () => {
   return (
     <main>
       <Section>

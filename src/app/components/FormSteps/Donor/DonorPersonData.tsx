@@ -2,7 +2,7 @@ import { Header, Button, Section, Input } from "@/app/components";
 import { UseFormRegister } from "react-hook-form";
 import { DonorDataType } from "./Donor.types";
 
-export const DonorPersonData = ({register, errors}) => {
+export const DonorPersonData = () => {
   return (
       <main>
         <Section>

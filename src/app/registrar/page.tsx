@@ -12,8 +12,13 @@ import {
 } from "../components/FormSteps";
 import { useMultiStepForm } from "@/hooks/useMultiStepForm";
 import { Button, Section, Header } from "../components";
-import { RegisterStepsSchema } from "@/utils/zodSchemas";
-import { useForm, SubmitHandler } from "react-hook-form";
+import { registerStepsSchema } from "@/utils/zodSchemas";
+import {
+  useForm,
+  SubmitHandler,
+  useFormContext,
+  FormProvider,
+} from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 const RegisterSteps = () => {
@@ -21,21 +26,22 @@ const RegisterSteps = () => {
     handleSubmit,
     register,
     formState: { errors },
-  } = useForm({
-    resolver: zodResolver(currentValidationSchema),
-  });
+  } = useFormContext();
 
   const { step, next, back, currentStepIndex } = useMultiStepForm([
-    <DonorPersonData register={register} errors={errors} key="person" />,
-    <DonorContactData register={register} errors={errors} key="contact" />,
-    <DonorLocationData register={register} errors={errors} key="location" />,
+    <DonorPersonData key="person" />,
+    <DonorContactData key="contact" />,
+    <DonorLocationData key="location" />,
     <SuccessRegister key="success" />,
-    <PetRegister1 register={register} errors={errors} key="pet1" />,
-    <PetRegister2 register={register} errors={errors} key="pet2" />,
-    <PetSelectImage register={register} errors={errors} key="image" />,
+    <PetRegister1 key="pet1" />,
+    <PetRegister2 key="pet2" />,
+    <PetSelectImage key="image" />,
   ]);
-
-  const currentValidationSchema = RegisterStepsSchema[currentStepIndex];
+  
+  const currentValidationSchema = registerStepsSchema[currentStepIndex];
+  const methods = useForm({
+    resolver: zodResolver(currentValidationSchema),
+  });
 
   const onSubmit = (e: FormEvent) => {
     e.preventDefault();
@@ -56,7 +62,7 @@ const RegisterSteps = () => {
       </Header>
       <form onSubmit={onSubmit}>
         <Section>
-          {step}
+          <FormProvider {...methods}>{step}</FormProvider>
           <div className="flex justify-end mb-9">
             <Button
               variant="filled"
