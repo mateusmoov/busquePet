@@ -15,19 +15,11 @@ import { Button, Section, Header } from "../components";
 import { registerStepsSchema } from "@/utils/zodSchemas";
 import {
   useForm,
-  SubmitHandler,
-  useFormContext,
   FormProvider,
 } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 const RegisterSteps = () => {
-  const {
-    handleSubmit,
-    register,
-    formState: { errors },
-  } = useFormContext();
-
   const { step, next, back, currentStepIndex } = useMultiStepForm([
     <DonorPersonData key="person" />,
     <DonorContactData key="contact" />,
@@ -37,16 +29,12 @@ const RegisterSteps = () => {
     <PetRegister2 key="pet2" />,
     <PetSelectImage key="image" />,
   ]);
-  
+
   const currentValidationSchema = registerStepsSchema[currentStepIndex];
+
   const methods = useForm({
     resolver: zodResolver(currentValidationSchema),
   });
-
-  const onSubmit = (e: FormEvent) => {
-    e.preventDefault();
-    next();
-  };
 
   return (
     <>
@@ -60,7 +48,7 @@ const RegisterSteps = () => {
           </span>
         </div>
       </Header>
-      <form onSubmit={onSubmit}>
+      <form>
         <Section>
           <FormProvider {...methods}>{step}</FormProvider>
           <div className="flex justify-end mb-9">
