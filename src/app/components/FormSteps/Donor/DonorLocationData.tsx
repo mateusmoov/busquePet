@@ -5,6 +5,7 @@ import { Header, Button, Section, Input, Select } from "@/app/components";
 import { useQuery } from "@tanstack/react-query";
 import { getLocationData } from "@/services/api";
 import { useEffect, useState } from "react";
+import { useFormContext } from "react-hook-form";
 
 type LocalizationType = {
   logradouro: string;
@@ -13,7 +14,19 @@ type LocalizationType = {
   uf: string;
 };
 
+type DonorLocationDataType = {
+  cep: string;
+  address: string;
+  uf: string;
+  city: string;
+  neighborhood: string;
+};
+
 export const DonorLocationData = () => {
+      const {
+        register,
+        formState: { errors },
+      } = useFormContext<DonorLocationDataType>();
   const [inputCep, setInputCep] = useState("");
 
   const { data, isLoading } = useQuery<LocalizationType>({
@@ -43,34 +56,54 @@ export const DonorLocationData = () => {
               type="number"
               variant="donor"
               placeholder="00000-000"
+              {...register("cep", { required: true })}
               onChange={(e) => setInputCep(e.target.value)}
               maxLength={8}
             />
+            <span className="font-body text-sm text-red-800">
+              {errors.cep?.message}
+            </span>
             <Input
               label="Seu Endereço"
               type="text"
               variant="donor"
               placeholder="Ex.: Rua dos Bichinhos Felizes"
+              {...register("address", { required: true })}
             />
+            <span className="font-body text-sm text-red-800">
+              {errors.address?.message}
+            </span>
             <Select
               selectItems={brazilStates}
               label="Seu estado"
               variant="donor"
               value={selectUf}
+              {...register("uf", { required: true })}
               onChange={(e) => setSelectUf(e.target.value)}
             />
+            <span className="font-body text-sm text-red-800">
+              {errors.uf?.message}
+            </span>
             <Input
               label="Sua Cidade"
               type="text"
               variant="donor"
               defaultValue={data?.localidade}
+              {...register("city", { required: true })}
             />
+            <span className="font-body text-sm text-red-800">
+              {errors.city?.message}
+            </span>
             <Input
               label="Seu Bairro"
               type="text"
               variant="donor"
               defaultValue={data?.bairro}
+              {...register("neighborhood", { required: true })}
             />
+            <span className="font-body text-sm text-red-800">
+              {errors.neighborhood?.message}
+            </span>
           </div>
         </div>
       </Section>

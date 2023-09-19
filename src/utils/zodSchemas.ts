@@ -16,10 +16,10 @@ export const registerStepsSchema = [
     cep: z.string().refine((value) => /^\d{5}-\d{3}$/.test(value), {
       message: "CEP inválido. Use o formato 00000-000",
     }),
-    endereco: z.string(),
+    address: z.string(),
     uf: z.string(),
-    cidade: z.string(),
-    bairro: z.string(),
+    city: z.string(),
+    neighborhood: z.string(),
   }),
   z.object({
     type: z.string().nonempty("O tipo do pet é obrigatório"),
