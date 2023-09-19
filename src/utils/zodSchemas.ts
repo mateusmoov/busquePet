@@ -6,11 +6,11 @@ export const registerStepsSchema = [
     birthDate: z.string().nonempty("O data é obrigatória")
   }),
   z.object({
-    numero: z.string().refine((value) => /^\(\d{2}\)\s\d\s\d{4}-\d{4}$/.test(value), {
+    number: z.string().refine((value) => /^\(\d{2}\)\s\d\s\d{4}-\d{4}$/.test(value), {
       message: "Número de telefone inválido. Use o formato (xx) x xxx-xxxx",
     }),
     email: z.string().email({ message: "Endereço de e-mail inválido" }),
-    senha: z.string().min(8, { message: "A senha deve ter pelo menos 8 caracteres" }),
+    password: z.string().min(8, { message: "A senha deve ter pelo menos 8 caracteres" }),
   }),
   z.object({
     cep: z.string().refine((value) => /^\d{5}-\d{3}$/.test(value), {

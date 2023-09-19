@@ -1,8 +1,20 @@
 "use client"
 
 import { Input, Header, Button, Section } from "@/app/components";
+import { useFormContext } from "react-hook-form";
+
+type DonorContactDataType = {
+  number: string;
+  email: string;
+  password: string
+};
+
 
 export const DonorContactData = () => {
+    const {
+      register,
+      formState: { errors },
+    } = useFormContext<DonorContactDataType>();
   return (
     <>
       <main>
@@ -17,13 +29,21 @@ export const DonorContactData = () => {
                 type="number"
                 variant="donor"
                 placeholder="(xx) 9 9999-9999"
+                {...register("number", { required: true })}
               />
+              <span className="font-body text-sm text-red-800">
+                {errors.number?.message}
+              </span>
               <Input
                 label="Seu e-mail"
                 type="email"
                 variant="donor"
                 placeholder="exemplo@email.com"
+                {...register("email", { required: true })}
               />
+              <span className="font-body text-sm text-red-800">
+                {errors.email?.message}
+              </span>
               <Input
                 label="Repita seu e-mail"
                 type="email"
@@ -36,7 +56,11 @@ export const DonorContactData = () => {
                 type="password"
                 variant="donor"
                 placeholder="********"
+                {...register("password", { required: true })}
               />
+              <span className="font-body text-sm text-red-800">
+                {errors.password?.message}
+              </span>
               <Input
                 togglePasswordVisibility
                 label="Repita a sua senha"
