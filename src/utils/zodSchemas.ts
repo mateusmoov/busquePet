@@ -28,8 +28,8 @@ export const registerStepsSchema = [
     ageRange: z.string().nonempty("A idade do pet é obrigatória"),
   }),
   z.object({
-    nomeBichinho: z.string(),
-    vacinas: z.enum(["todasVacinas", "naoVacinas", "algumasVacinas", "naosabe"]),
-    descricaoBichinho: z.string(),
+    name: z.string(),
+    vaccines: z.enum(["todasVacinas", "naoVacinas", "algumasVacinas", "naosabe"]),
+    description: z.string(),
   }),
 ]

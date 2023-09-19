@@ -2,16 +2,12 @@
 
 import { ageRanges } from "@/utils/age";
 import {
-  Header,
-  Button,
   Section,
   FormGroup,
   RadioButton,
   Select,
 } from "@/app/components";
-import { useForm, SubmitHandler } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { z } from "zod";
+import { useFormContext } from "react-hook-form";
 
 type DonorRegisterStep1Data = {
   type: "cachorro" | "gato";
@@ -20,21 +16,11 @@ type DonorRegisterStep1Data = {
   ageRange: string;
 };
 
-const donorRegisterStep1Schema = z.object({
-  type: z.string().nonempty("O tipo do pet é obrigatório"),
-  gender: z.string().nonempty("O genero do pet é obrigatório"),
-  size: z.string().nonempty("O porte do pet é obrigatório"),
-  ageRange: z.string().nonempty("A idade do pet é obrigatória"),
-});
-
 export const PetRegister1 = () => {
-  const {
-    handleSubmit,
-    register,
-    formState: { errors },
-  } = useForm<DonorRegisterStep1Data>({
-    resolver: zodResolver(donorRegisterStep1Schema),
-  });
+      const {
+        register,
+        formState: { errors },
+      } = useFormContext<DonorRegisterStep1Data>();
 
   return (
     <main>
@@ -59,6 +45,9 @@ export const PetRegister1 = () => {
                 <RadioButton label="Macho" value="macho" />
               </div>
             </FormGroup>
+            <span className="font-body text-sm text-red-800">
+              {errors.type?.message}
+            </span>
           </div>
           <FormGroup
             label="Qual o porte do bichinho?"
@@ -71,11 +60,18 @@ export const PetRegister1 = () => {
               <RadioButton label="Grande" value="grande" />
             </div>
           </FormGroup>
+          <span className="font-body text-sm text-red-800">
+            {errors.size?.message}
+          </span>
           <Select
             label="Qual a idade do seu bichinho?"
             variant="donor"
             selectItems={ageRanges}
+            {...register("ageRange", { required: true })}
           />
+          <span className="font-body text-sm text-red-800">
+            {errors.ageRange?.message}
+          </span>
         </div>
       </Section>
     </main>

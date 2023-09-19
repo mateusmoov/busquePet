@@ -1,13 +1,22 @@
 import {
-  Header,
-  Button,
   Section,
   FormGroup,
   RadioButton,
   Input,
   TextArea,
 } from "@/app/components";
+import { useFormContext } from "react-hook-form";
+
+type PetRegister2Type = {
+  name: string
+  vaccines: string
+  description: string
+}
 export const PetRegister2 = () => {
+      const {
+        register,
+        formState: { errors },
+      } = useFormContext<PetRegister2Type>();
   return (
     <main>
       <Section>
@@ -19,7 +28,11 @@ export const PetRegister2 = () => {
               type="text"
               variant="donor"
               hint="Se não tiver nome, você pode criar um para o cadastro"
+              {...register("name", { required: true })}
             />
+            <span className="font-body text-sm text-red-800">
+              {errors.name?.message}
+            </span>
           </div>
           <FormGroup
             label="O seu animalzinho já tem todas as vacinas?"
@@ -48,7 +61,11 @@ export const PetRegister2 = () => {
             className="h-64 resize-none"
             hint="Esta mensagem ficará na descrição sobre o pet.
 Você poderá editá-la depois."
+            {...register("description", { required: true })}
           />
+          <span className="font-body text-sm text-red-800">
+            {errors.description?.message}
+          </span>
         </div>
       </Section>
     </main>
