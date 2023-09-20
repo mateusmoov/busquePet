@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Section, Button } from "@/app/components";
+import Link from "next/link";
 
 export const DecisionRegister = () => {
   return (
@@ -23,24 +24,28 @@ export const DecisionRegister = () => {
             className="bg-fuchsia-800  px-5 py-4"
             icon="arrowRight"
           >
-            <div className="flex flex-col text-start">
-              <span className="mb-2 font-semibold">
-                Cadastrar como adotante
-              </span>
-              <span>Quero um bicho para dar amor e um lar digno.</span>
-            </div>
+            <Link href="/registro-adotante">
+              <div className="flex flex-col text-start">
+                <span className="mb-2 font-semibold">
+                  Cadastrar como adotante
+                </span>
+                <span>Quero um bicho para dar amor e um lar digno.</span>
+              </div>
+            </Link>
           </Button>
           <Button
             variant="filled"
             className="bg-cyan-700 px-5 py-4"
             icon="arrowRight"
           >
-            <div className="flex flex-col text-start">
-              <span className="mb-2 font-semibold">
-                Cadastrar como doador
-              </span>
-              <span>Quero doar para que bichinho tenha um lar digno.</span>
-            </div>
+            <Link href="/registro-doador">
+              <div className="flex flex-col text-start">
+                <span className="mb-2 font-semibold">
+                  Cadastrar como doador
+                </span>
+                <span>Quero doar para que bichinho tenha um lar digno.</span>
+              </div>
+            </Link>
           </Button>
         </div>
       </Section>
@@ -50,6 +55,5 @@ export const DecisionRegister = () => {
     </main>
   );
 };
-
 
 export default DecisionRegister;

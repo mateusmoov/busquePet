@@ -2,17 +2,6 @@ import { Header, Button, Section, Input } from "@/app/components";
 
 export const AdopterContactData = () => {
   return (
-    <>
-      <Header variant="adopter" icon>
-        <div className="flex flex-col gap-x-2 ml-7 py-4">
-          <span className="font-header text-white text-xl font-semibold">
-            Você quer adoar!
-          </span>
-          <span className="font-header text-white text-sm">
-            Vai ser bem rapidinho!
-          </span>
-        </div>
-      </Header>
       <main>
         <Section>
           <div className="flex min-h-[calc(100vh_-_10rem)] flex-col">
@@ -20,15 +9,15 @@ export const AdopterContactData = () => {
               Seus Dados Pessoais
             </span>
             <div className="flex flex-col gap-y-5">
-              <Input label="Seu Nome Completo" type="text" variant="donor" />
-              <Input label="Sua idade" type="number" variant="donor" />
-              <Input label="Seu E-mail" type="email" variant="donor" />
-              <Input label="Crie uma senha" type="password" variant="donor" />
+              <Input label="Seu Nome Completo" type="text" variant="adopter" />
+              <Input label="Sua idade" type="number" variant="adopter" />
+              <Input label="Seu E-mail" type="email" variant="adopter" />
+              <Input label="Crie uma senha" type="password" variant="adopter" />
               <Input
                 togglePasswordVisibility
                 label="Confirme sua senha"
                 type="password"
-                variant="donor"
+                variant="adopter"
               />
             </div>
           </div>
@@ -43,7 +32,6 @@ export const AdopterContactData = () => {
           </div>
         </Section>
       </main>
-    </>
   );
 };
 
