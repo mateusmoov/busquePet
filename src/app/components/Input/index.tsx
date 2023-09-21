@@ -33,7 +33,7 @@ const variants = {
 
 export const Input = forwardRef<HTMLInputElement, InputProps>(
   ({ label, variant, hint, className, togglePasswordVisibility = false, ...rest }, ref) => {
-    const [isPasswordVisible, setPasswordVisible] = useState(true);
+    const [isPasswordVisible, setPasswordVisible] = useState(false);
 
 const handleTogglePasswordVisibility = (
   event: React.MouseEvent<HTMLElement>
@@ -42,7 +42,8 @@ const handleTogglePasswordVisibility = (
   setPasswordVisible(!isPasswordVisible);
 };
 
-const inputType = isPasswordVisible ? "text" : "password"
+const inputType = isPasswordVisible ? "text" : rest.type
+
 
 
     return (

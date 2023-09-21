@@ -6,20 +6,16 @@ export const registerStepsSchema = [
     birthDate: z.string().nonempty("O data é obrigatória")
   }),
   z.object({
-    number: z.string().refine((value) => /^\(\d{2}\)\s\d\s\d{4}-\d{4}$/.test(value), {
-      message: "Número de telefone inválido. Use o formato (xx) x xxx-xxxx",
-    }),
+    number: z.string().min(11, { message: "Telefone inválido" }),
     email: z.string().email({ message: "Endereço de e-mail inválido" }),
     password: z.string().min(8, { message: "A senha deve ter pelo menos 8 caracteres" }),
   }),
   z.object({
-    cep: z.string().refine((value) => /^\d{5}-\d{3}$/.test(value), {
-      message: "CEP inválido. Use o formato 00000-000",
-    }),
-    address: z.string(),
-    uf: z.string(),
-    city: z.string(),
-    neighborhood: z.string(),
+    cep: z.string().min(8, { message: "CEP inválido" }),
+    address: z.string().nonempty("O endereço é obrigatório"),
+    asas: z.string().nonempty("O Estado é obrigatório"),
+    city: z.string().nonempty("A cidade é obrigatório"),
+    neighborhood: z.string().nonempty("O bairro é obrigatório"),
   }),
   z.object({
     type: z.string().nonempty("O tipo do pet é obrigatório"),
