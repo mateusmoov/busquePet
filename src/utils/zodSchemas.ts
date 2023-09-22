@@ -13,7 +13,7 @@ export const registerStepsSchema = [
   z.object({
     cep: z.string().min(8, { message: "CEP inválido" }),
     address: z.string().nonempty("O endereço é obrigatório"),
-    asas: z.string().nonempty("O Estado é obrigatório"),
+    uf: z.string().nonempty("O Estado é obrigatório"),
     city: z.string().nonempty("A cidade é obrigatório"),
     neighborhood: z.string().nonempty("O bairro é obrigatório"),
   }),
@@ -27,5 +27,21 @@ export const registerStepsSchema = [
     name: z.string(),
     vaccines: z.enum(["todasVacinas", "naoVacinas", "algumasVacinas", "naosabe"]),
     description: z.string(),
+  }),
+]
+
+export const adopterRegisterStepSchema = [
+  z.object({
+    name: z.string().nonempty("O e-mail é obrigatório"),
+    age: z.number(),
+    email: z.string().email({message: "O e-mail é obrigatório"}),
+    password: z.string().nonempty({message: "A senha é obrigatória"})
+  }),
+  z.object({
+    cep: z.string().min(8, { message: "CEP inválido" }),
+    address: z.string().nonempty("O endereço é obrigatório"),
+    uf: z.string().nonempty("O Estado é obrigatório"),
+    city: z.string().nonempty("A cidade é obrigatório"),
+    neighborhood: z.string().nonempty("O bairro é obrigatório"),
   }),
 ]

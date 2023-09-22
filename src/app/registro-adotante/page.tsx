@@ -6,7 +6,7 @@ import {
 } from "../components/FormSteps";
 import { useMultiStepForm } from "@/hooks/useMultiStepForm";
 import { Button, Section, Header } from "../components";
-import { registerStepsSchema } from "@/utils/zodSchemas";
+import { adopterRegisterStepSchema } from "@/utils/zodSchemas";
 import { useForm, FormProvider } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
@@ -17,7 +17,7 @@ const RegisterSteps = () => {
   ]);
 
 
-  const currentValidationSchema = registerStepsSchema[currentStepIndex];
+  const currentValidationSchema = adopterRegisterStepSchema[currentStepIndex];
 
   const methods = useForm({
     resolver: zodResolver(currentValidationSchema),
