@@ -69,15 +69,6 @@ export const AdopterContactData = () => {
             </span>
           </div>
         </div>
-        <div className="flex justify-end mb-9">
-          <Button
-            variant="filled"
-            icon="arrowRight"
-            className="bg-fuchsia-800 flex px-14 py-3 items-center font-medium text-white"
-          >
-            Próximo
-          </Button>
-        </div>
       </Section>
     </main>
   );
