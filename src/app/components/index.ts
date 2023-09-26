@@ -9,3 +9,4 @@ export { Section } from './Section'
 export { TextArea } from "./TextArea";
 export { ImagePreview } from './ImagePreview'
 export { ImageUpload } from "./ImageUpload";
+export { PetCard } from "./PetCard"

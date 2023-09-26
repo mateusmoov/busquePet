@@ -23,10 +23,10 @@ type DonorLocationDataType = {
 };
 
 export const DonorLocationData = () => {
-      const {
-        register,
-        formState: { errors },
-      } = useFormContext<DonorLocationDataType>();
+  const {
+    register,
+    formState: { errors },
+  } = useFormContext<DonorLocationDataType>();
   const [inputCep, setInputCep] = useState("");
 
   const { data, isLoading } = useQuery<LocalizationType>({

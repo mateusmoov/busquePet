@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { Input, Button, Section } from "@/app/components";
+import { Input, Button, Section, PetCard } from "@/app/components";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
