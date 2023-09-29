@@ -3,6 +3,7 @@ import { petSize, petGender } from ".";
 
 export type PetCardProps = {
   name: string;
+  petImage: string;
   age: string;
   size: SizeProps;
   gender: GenderProps;

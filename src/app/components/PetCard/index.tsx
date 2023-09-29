@@ -28,13 +28,13 @@ export const petGender = {
   },
 } satisfies Record<string, PetImageProps>;
 
-export const PetCard = ({ name, age, size, gender, address }: PetCardProps) => {
+export const PetCard = ({ name, petImage, age, size, gender, address }: PetCardProps) => {
   return (
     <div className="flex w-full max-h-[136px]">
       <Image
         width="192"
         height="136"
-        src="/cachorro.jpg"
+        src={petImage}
         alt="Pet"
         className="rounded-l-lg"
       />
