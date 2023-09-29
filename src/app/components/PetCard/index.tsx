@@ -1,23 +1,7 @@
 import Image from "next/image";
+import { PetCardProps, PetImageProps } from "./PetCard.types";
 
-type PetCardProps = {
-  name: string;
-  age: string;
-  size: SizeProps;
-  gender: GenderProps;
-  address: string;
-};
-
-type PetImageProps = {
-  image: string,
-  alt: string
-}
-
-type SizeProps = keyof typeof petSize;
-type GenderProps = keyof typeof petGender;
-
-
-const petSize = {
+export const petSize = {
   small: {
     image: "pet-s.svg",
     alt: "Tamanho Pequeno",
@@ -33,7 +17,7 @@ const petSize = {
 } satisfies Record<string, PetImageProps>;
 
 
-const petGender = {
+export const petGender = {
   male: {
     image: "pet-male.svg",
     alt: "Macho",
