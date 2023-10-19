@@ -8,6 +8,7 @@ export type PetCardProps = {
   size: SizeProps;
   gender: GenderProps;
   address: string;
+  cardType: 'horizontal' | 'vertical';
 };
 
 export type PetImageProps = {

@@ -16,7 +16,6 @@ export const petSize = {
   },
 } satisfies Record<string, PetImageProps>;
 
-
 export const petGender = {
   male: {
     image: "pet-male.svg",
@@ -28,8 +27,16 @@ export const petGender = {
   },
 } satisfies Record<string, PetImageProps>;
 
-export const PetCard = ({ name, petImage, age, size, gender, address }: PetCardProps) => {
-  return (
+export const PetCard = ({
+  name,
+  petImage,
+  age,
+  size,
+  gender,
+  address,
+  cardType,
+}: PetCardProps) => {
+  return cardType === "horizontal" ? (
     <div className="flex w-full max-h-[136px]">
       <Image
         width="192"
@@ -67,6 +74,54 @@ export const PetCard = ({ name, petImage, age, size, gender, address }: PetCardP
               className="mr-2"
             />
             <span className="font-body text-xs">{address}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  ) : (
+    <div className="flex w-[168px] max-h-[184px] flex-col ">
+      <Image
+        width="168"
+        height="112"
+        src={petImage}
+        alt="Pet"
+        className="rounded-t-lg"
+      />
+      <div className="h-full  px-2 py-2 shadow-md">
+        <div className="flex items-center justify-between">
+          <div className="flex flex-col">
+            <span className="font-body text-fuchsia-800 font-semibold">
+              {name}
+            </span>
+            <span className="font-body text-zinc-800 text-xs">{age}</span>
+          </div>
+          <div>
+            <Image
+              width="30"
+              height="30"
+              src={petGender[gender].image}
+              alt="Genero do Animal"
+            />
+          </div>
+        </div>
+        <div className="flex items-center justify-between">
+          <div className="flex align-baseline">
+            <Image
+              width="6"
+              height="10"
+              src="/place.svg"
+              alt="Localização"
+              className="mr-2"
+            />
+            <span className="font-body text-xs">{address}</span>
+          </div>
+          <div>
+            <Image
+              width="28"
+              height="14"
+              src={petSize[size].image}
+              alt="Porte do Animal"
+            />
           </div>
         </div>
       </div>
