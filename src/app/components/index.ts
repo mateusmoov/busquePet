@@ -10,3 +10,6 @@ export { TextArea } from "./TextArea";
 export { ImagePreview } from './ImagePreview'
 export { ImageUpload } from "./ImageUpload";
 export { PetCard } from "./PetCard"
+export { PetDetails } from "./PetDetails"
+export { HeaderPet } from "./HeaderPet"
+export { PetDetail } from "./PetDetail"

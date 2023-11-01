@@ -79,15 +79,15 @@ export const PetCard = ({
       </div>
     </div>
   ) : (
-    <div className="flex w-[168px] max-h-[184px] flex-col ">
+    <div className="flex w-full max-h-[184px] flex-col ">
       <Image
         width="168"
         height="112"
         src={petImage}
         alt="Pet"
-        className="rounded-t-lg"
+        className="rounded-t-lg w-full"
       />
-      <div className="h-full  px-2 py-2 shadow-md">
+      <div className="h-full  px-2 py-2 shadow-md rounded-b-lg">
         <div className="flex items-center justify-between">
           <div className="flex flex-col">
             <span className="font-body text-fuchsia-800 font-semibold">
