@@ -1,14 +1,25 @@
 import { HeaderPet, Section, PetDetail } from "@/app/components";
 import Image from "next/image";
 
-export const PetDetails = () => {
+type PetInfoType = {
+  name: string
+  adopterName: string,
+  image: string
+  age: string
+  size: string
+  gender: string
+  address: string
+  description: string
+}
+
+export const PetDetails = ({petInfo}: {petInfo: PetInfoType}) => {
   return (
     <>
-      <HeaderPet petName="Aquiles" />
+      <HeaderPet petName={petInfo.name} />
       <Section className="mt-2">
         <div className="w-full max-w-full">
           <Image
-            src="/cachorro.jpg"
+            src={petInfo.image}
             alt="Imagem de um cachorro muito massa"
             layout="responsive"
             width={500}
@@ -19,19 +30,18 @@ export const PetDetails = () => {
 
         <div className="flex flex-col gap-y-2 mt-6">
           <section className="flex justify-between">
-            <PetDetail title="Nome" content="Aquiles" />
-            <PetDetail title="Idade" content="12 anos" />
+            <PetDetail title="Nome" content={petInfo.name} />
+            <PetDetail title="Idade" content={petInfo.age} />
           </section>
           <section className="flex justify-between">
-            <PetDetail title="Porte" content="Grande" />
-            <PetDetail title="Gênero" content="Macho" />
+            <PetDetail title="Porte" content={petInfo.size} />
+            <PetDetail title="Gênero" content={petInfo.gender} />
           </section>
-            <PetDetail title="Localização" content="Brasilia - DF" />
-            <PetDetail title="Doador" content="Mateus Vasconcelos" />
+            <PetDetail title="Localização" content={petInfo.address} />
+            <PetDetail title="Doador" content={petInfo.name} />
           <PetDetail
             title="Descrição"
-            content="Esse cachorrão subiu em cima da minha cama e não quer sair, alguém
-              por favor me ajuda a arrumar um lar pra ele!"
+            content={petInfo.description}
           />
         </div>
       </Section>
