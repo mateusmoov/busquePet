@@ -13,3 +13,4 @@ export { PetCard } from "./PetCard"
 export { PetDetails } from "./PetDetails"
 export { HeaderPet } from "./HeaderPet"
 export { PetDetail } from "./PetDetail"
+export { Modal } from './Modal'
