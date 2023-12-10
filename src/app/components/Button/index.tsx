@@ -30,7 +30,7 @@ export const Button = ({
       {...rest}
     >
       {children}
-      {icon && <Icon variant={icon} className="absolute right-2 bottom-[14px]" />}
+      {icon && <Icon variant={icon} className="absolute right-2 bottom-[14px]" height={20} width={20} />}
     </button>
   );
 };

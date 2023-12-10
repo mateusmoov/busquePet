@@ -24,7 +24,7 @@ export const Header = ({ children, variant, className, icon, handleBackClick, ..
         {...rest}
       >
         <button onClick={handleBackClick}>
-          {icon && <Icon variant="arrowLeft" className="ml-4" />}
+          {icon && <Icon variant="arrowLeft" className="ml-4" height={20} width={20}/>}
         </button>
         {children}
       </header>

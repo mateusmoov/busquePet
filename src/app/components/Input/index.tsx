@@ -73,7 +73,7 @@ const inputType = isPasswordVisible ? "text" : rest.type
             className="absolute right-3 bottom-5"
             onClick={(event) => handleTogglePasswordVisibility(event)}
           >
-            <Icon variant="eyes" />
+            <Icon variant="eyes" height={24} width={24}/>
           </button>
         )}
         <span className="text-xs font-body font-medium text-zinc-500 mt-1">
