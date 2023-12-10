@@ -1,4 +1,4 @@
-import { HeaderPet, Section, PetDetail } from "@/app/components";
+import { HeaderPet, Section, PetDetail, Button } from "@/app/components";
 import Image from "next/image";
 
 type PetInfoType = {
@@ -37,14 +37,14 @@ export const PetDetails = ({petInfo}: {petInfo: PetInfoType}) => {
             <PetDetail title="Porte" content={petInfo.size} />
             <PetDetail title="Gênero" content={petInfo.gender} />
           </section>
-            <PetDetail title="Localização" content={petInfo.address} />
-            <PetDetail title="Doador" content={petInfo.name} />
-          <PetDetail
-            title="Descrição"
-            content={petInfo.description}
-          />
+          <PetDetail title="Localização" content={petInfo.address} />
+          <PetDetail title="Doador" content={petInfo.name} />
+          <PetDetail title="Descrição" content={petInfo.description} />
         </div>
       </Section>
+      <div className="flex justify-center mt-3 mb-8">
+      <Button variant="gradient" className="text-white px-[74px] py-2 font-body font-medium">Quero Adotar</Button>
+      </div>
     </>
   );
 };
