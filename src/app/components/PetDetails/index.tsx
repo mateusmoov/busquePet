@@ -15,24 +15,6 @@ type PetInfoType = {
 export const PetDetails = ({petInfo}: {petInfo: PetInfoType}) => {
   return (
     <>
-      {/* <Modal>
-        <div className="flex flex-col items-center gap-y-16">
-          <h1 className="text-3xl font-semibold font-body text-cyan-600">
-            Eba! Vamos adotar!
-          </h1>
-          <p className="font-header text-sm">
-            Para você poder salvar o perfil desse pet, é necessário fazer um
-            cadastro.
-          </p>
-          <Button
-            variant="outlined"
-            className="outline-cyan-600 text-cyan-600 font-medium px-5 py-2"
-          >
-            Fazer Cadastro
-          </Button>
-        </div>
-      </Modal> */}
-
       <HeaderPet petName={petInfo.name} />
       <Section className="mt-2">
         <div className="w-full max-w-full">
