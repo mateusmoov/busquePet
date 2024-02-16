@@ -7,9 +7,9 @@
 - [x] Button
 - [x] Inputs
 - [x] Selects
-- [ ] Modal
-- [ ] Checkbox Filter
-- [ ] Buttons Filter
+- [x] Modal
+- [x] Checkbox Filter
+- [x] Buttons Filter
 - [ ] Slider Location 
 - [ ] Principal Page Header
 
