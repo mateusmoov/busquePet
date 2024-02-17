@@ -11,7 +11,7 @@ export { ImagePreview } from "./ImagePreview";
 export { ImageUpload } from "./ImageUpload";
 export { PetCard } from "./PetCard";
 export { PetDetails } from "./PetDetails";
-export { HeaderPet } from "./HeaderPet";
+export { SimpleHeader } from "./SimpleHeader";
 export { PetDetail } from "./PetDetail";
 export { Modal } from "./Modal";
 export { ButtonFilter } from "./Filter/Button";

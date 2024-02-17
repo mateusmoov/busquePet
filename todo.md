@@ -10,8 +10,14 @@
 - [x] Modal
 - [x] Checkbox Filter
 - [x] Buttons Filter
-- [ ] Slider Location 
+- [x] Slider Location 
 - [ ] Principal Page Header
+
+
+### Side tasks
+ - [] Handle mutiples checkboxes
+ - [] Fix the problems of validation in Zod 
+
 
 ### Screens
 - [ ] Filter
