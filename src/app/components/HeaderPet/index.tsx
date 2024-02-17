@@ -22,17 +22,15 @@ export const HeaderPet = ({
       >
         <button onClick={handleBackClick}>
           <Icon
-            variant="arrowLeft"
-            height={20}
-            width={17}
-            className="ml-4 text-fuchsia-800"
+            icon="ArrowLeft"
+            className="ml-4 text-fuchsia-800 h-5 w-4"
           />
         </button>
         <span className="font-header font-semibold text-fuchsia-800 text-xl">
           {petName}
         </span>
         <button onClick={favClick}>
-          <Icon variant="favorite" height={24} width={24} className="ml-4 " />
+          <Icon icon="Favorite" className="ml-4 w-6 h-6" />
         </button>
       </header>
     </>

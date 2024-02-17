@@ -1,7 +1,11 @@
 'use client'
-import React, { ChangeEvent, FC } from 'react';
+import React, { ChangeEvent } from 'react';
 
-export const CheckboxFilter: FC = ({label}) => {
+interface CheckboxFilterType {
+  label: string
+}
+
+export const CheckboxFilter= ({label}: CheckboxFilterType) => {
   const [isChecked, setIsChecked] = React.useState(false);
 
   const handleOnChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -21,7 +25,7 @@ export const CheckboxFilter: FC = ({label}) => {
         htmlFor="myCheckbox"
         className='cursor-pointer select-none text-stone-300 peer-checked:text-cyan-700 font-header font-medium ml-1 text-sm'
       >
-        Click me
+        {label}
       </label>
     </div>
   );

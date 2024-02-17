@@ -14,7 +14,7 @@ interface Props extends HTMLAttributes<HTMLDivElement> {
 
 export const Icon = ({ icon, className, rotate, color, ...rest }: Props) => {
   const SvgIcon = useMemo(() => icons[icon], [icon]);
-
+  
   if (!SvgIcon) return null;
 
   return (
@@ -25,6 +25,7 @@ export const Icon = ({ icon, className, rotate, color, ...rest }: Props) => {
       role="img"
       style={{
         transform: rotate ? `rotate(${rotate}deg)` : undefined,
+        color: color
       }}
       {...rest}
     >

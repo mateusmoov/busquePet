@@ -67,8 +67,9 @@ const RegisterSteps = () => {
             <div className="flex justify-end mb-9">
               <Button
                 variant="filled"
-                icon="arrowRight"
-                className="bg-cyan-700 flex px-14 py-3 items-center font-medium"
+                icon="ArrowRight"
+                color="#FBFBFB"
+                className="bg-cyan-700 flex px-14 py-3 items-center font-medium text-white"
                 onClick={(event: any) => handleNext(event)}
               >
                 Próximo

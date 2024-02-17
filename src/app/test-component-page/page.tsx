@@ -1,8 +1,8 @@
-import { CheckboxFilter } from "../components/Filter"
+import { Icon } from "../components"
 
 const TestComponentPage = () => {
   return (
-    <CheckboxFilter label="1 - 3 meses" /> 
+    <Icon icon="ArrowRight"  /> 
   )
 }
 

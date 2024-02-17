@@ -33,8 +33,9 @@ export const DonorPersonType = () => {
           <div className="flex justify-end mb-9">
             <Button
               variant="filled"
-              icon="arrowRight"
-              className="bg-cyan-700 flex px-14 py-3 items-center font-medium"
+              icon="ArrowRight"
+              className="bg-cyan-700 flex px-14 py-3 items-center font-medium text-whited"
+              color="#FBFBFB"
             >
               Próximo
             </Button>

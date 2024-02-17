@@ -1,13 +1,13 @@
 import { ComponentPropsWithRef } from "react";
 import { twMerge } from "tailwind-merge";
 import { Icon } from "@/app/components";
-import { IconVariantProps } from "../Icon";
+import { IconName } from "../Icon";
 type VariantProps = Record<string, string>;
 type VariantKeyProps = keyof typeof variants;
 
-type ButtonProps = ComponentPropsWithRef<'button'> & {
+type ButtonProps = ComponentPropsWithRef<"button"> & {
   variant: VariantKeyProps;
-  icon?: IconVariantProps;
+  icon?: IconName;
 };
 
 const variants = {
@@ -22,15 +22,19 @@ export const Button = ({
   variant,
   className,
   icon,
+  color,
   ...rest
 }: ButtonProps) => {
+  
   return (
     <button
       className={twMerge(variants[variant], className, "relative")}
       {...rest}
     >
       {children}
-      {icon && <Icon variant={icon} className="absolute right-2 bottom-[14px]" height={20} width={20} />}
+      {icon && (
+        <Icon icon={icon} className="absolute right-2 bottom-[14px]" color={color} />
+      )}
     </button>
   );
 };
