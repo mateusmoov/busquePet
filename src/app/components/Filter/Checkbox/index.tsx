@@ -1,33 +1,33 @@
-'use client'
-import React, { ChangeEvent } from 'react';
+import React, { ChangeEvent, forwardRef } from "react";
 
 interface CheckboxFilterType {
-  label: string
+  label: string;
+  value: string;
 }
 
-export const CheckboxFilter= ({label}: CheckboxFilterType) => {
-  const [isChecked, setIsChecked] = React.useState(false);
+export const CheckboxFilter = forwardRef<HTMLInputElement, CheckboxFilterType>(
+  ({ label, value, ...rest }, ref) => {
 
-  const handleOnChange = (event: ChangeEvent<HTMLInputElement>) => {
-    setIsChecked(event.target.checked);
-  };
 
-  return (
-    <div className="flex items-center">
-      <input
-        type="checkbox"
-        id="myCheckbox"
-        className="peer accent-pink-400 w-4 h-4"
-        checked={isChecked}
-        onChange={handleOnChange}
-      />
-      <label
-        htmlFor="myCheckbox"
-        className='cursor-pointer select-none text-stone-300 peer-checked:text-cyan-700 font-header font-medium ml-1 text-sm'
-      >
-        {label}
-      </label>
-    </div>
-  );
-};
+    return (
+      <div className="flex items-center">
+        <input
+          type="checkbox"
+          id={label}
+          value={value}
+          className="peer accent-pink-400 w-4 h-4"
+          {...rest}
+          ref={ref}
+        />
+        <label
+          htmlFor={label}
+          className="cursor-pointer select-none text-stone-300 peer-checked:text-cyan-700 font-header font-medium ml-1 text-sm"
+        >
+          {label}
+        </label>
+      </div>
+    );
+  }
+);
 
+CheckboxFilter.displayName = "checkboxfilter";
